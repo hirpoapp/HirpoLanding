@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirpo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="icon" href="./assets/navLogo.svg">
+</head>
+
+<body>
+    <nav class="nav">
+        <a class="nav-logoGroups" href="/">
+            <img src="./assets/navLogo.svg" alt="">
+            <h2>Hirpo</h2>
+        </a>
+        <div class="menu">
+            <ul class="nav-itemGroups">
+                <li onclick="hamburgerOpen()"><a href="index.html#home">About Hirpo</a></li>
+                <li onclick="hamburgerOpen()"><a href="https://hirpo.vercel.app/dashboard">Dashboard</a></li>
+                <li onclick="hamburgerOpen()"><a href="package.html">Pricing & Bills</a></li>
+                <li onclick="hamburgerOpen()"><a href="index.html#newsletter">Contact us</a></li>
+            </ul>
+            <div class="nav-buttonGroups">
+                <a href="https://hirpo.vercel.app/">
+                    <button class="nav-login">Login</button>
+                </a>
+                <a href="https://hirpo.vercel.app/signup">
+                    <button class="nav-start">Get started</button>
+                </a>
+            </div>
+        </div>
+        <div class="hamburger" onclick="hamburgerOpen()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+
+    <div class="packageBody">
+        <div class="planBox">
+            <h3>Choose a plan tailored to your needs</h3>
+            <div class="checkPlan">
+                <span>Mothly</span>
+                <label class="switch">
+                    <input type="checkbox" onchange="applyDiscount(this)">
+                    <span class="slider"></span>
+                </label>
+                <span>Yearly</span>
+                <div>
+                    <span>25% OFF</span>
+                </div>
+                <img src="./assets/curlArrow.png" alt="">
+            </div>
+        </div>
+        <div class="packages package-carousel">
+            <div class="packBox" onclick="changeStyle(this, 50)">
+                <div class="packHead">
+                    <div>
+                        <img src="./assets/s.svg" alt="smallPackicon">
+                        <h2>Small Enterprise Plan</h2>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="old-price"></span>
+                            <b class="price">50₼</b>
+                        </div>
+                        <b>
+                            <span>per month</span>
+                        </b>
+                    </div>
+                </div>
+                <button class="getStartedpack" onclick="openModal()">Get started</button>
+                <div class="packBody">
+                    <p>0-20 <span>employees</span></p>
+                    <ul>
+                        <li><img src="./assets/done.svg" alt="done">1 month free trial</li>
+                        <li><img src="./assets/done.svg" alt="done">Wizard</li>
+                        <li><img src="./assets/done.svg" alt="done">Self-editing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="packBox selected" onclick="changeStyle(this, 150)">
+                <div class="packHead">
+                    <div>
+                        <img src="./assets/m.svg" alt="smallPackicon">
+                        <h2>Medium Enterprise Plan</h2>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="old-price"></span>
+                            <b class="price">150₼</b>
+                        </div>
+                        <b>
+                            <span>per month</span>
+                        </b>
+                    </div>
+                </div>
+                <button class="getStartedpack" onclick="openModal()">Get started</button>
+                <div class="packBody">
+                    <p>20-50 <span>employees</span></p>
+                    <ul>
+                        <li><img src="./assets/done.svg" alt="done">1 month free trial</li>
+                        <li><img src="./assets/done.svg" alt="done">Wizard</li>
+                        <li><img src="./assets/done.svg" alt="done">Self-editing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="packBox" onclick="changeStyle(this, 350)">
+                <div class="packHead">
+                    <div>
+                        <img src="./assets/large.svg" alt="smallPackicon">
+                        <h2>Large Enterprise Plan</h2>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="old-price"></span>
+                            <b class="price">350₼</b>
+                        </div>
+                        <b>
+                            <span>per month</span>
+                        </b>
+                    </div>
+                </div>
+                <button class="getStartedpack" onclick="openModal()">Get started</button>
+                <div class="packBody">
+                    <p>50-100 <span>employees</span></p>
+                    <ul>
+                        <li><img src="./assets/done.svg" alt="done">1 month free trial</li>
+                        <li><img src="./assets/done.svg" alt="done">Wizard</li>
+                        <li><img src="./assets/done.svg" alt="done">Self-editing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="packBox" onclick="changeStyle(this, 750)">
+                <div class="packHead">
+                    <div>
+                        <img src="./assets/star.svg" alt="smallPackicon">
+                        <h2>Corporate Enterprise Plan</h2>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="old-price"></span>
+                            <b class="price">750₼</b>
+                        </div>
+                        <b>
+                            <span>per month</span>
+                        </b>
+                    </div>
+                </div>
+                <button class="getStartedpack" onclick="openModal()">Get started</button>
+                <div class="packBody">
+                    <p>100-200 <span>employees</span></p>
+                    <ul>
+                        <li><img src="./assets/done.svg" alt="done">1 month free trial</li>
+                        <li><img src="./assets/done.svg" alt="done">Wizard</li>
+                        <li><img src="./assets/done.svg" alt="done">Self-editing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="carousel-navigation">
+                <button class="carousel-prev" onclick="prevPackage()">&lt;</button>
+                <button class="carousel-next" onclick="nextPackage()">&gt;</button>
+            </div>
+        </div>
+        <div class="packModal">
+            <div class="modal-content">
+                <!-- <span class="close">&times;</span> -->
+                <div class="modalBody">
+                    <div>
+                        <button class="modalPlan">6 month plan</button>
+                        <button class="modalPlan">1 year plan</button>
+                    </div>
+                    <button class="getPlan" onclick="closeModal()">Get the plan</button>
+                </div>
+            </div>
+        </div>
+        <div class="packContact">
+            <p>200+ <span>employees</span></p>
+            <button>Contact us</button>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="left">
+            <h1>Ready and easy to use performance management solutions</h1>
+            <p>Hirpo enables you to easily automate 70% of the solution process through the information available in the
+                database. With Hirpo, you can effectively carry out the performance evaluation process of your
+                employees.</p>
+            <div class="footer-buttonGroups">
+                <a href="https://hirpo.vercel.app/signup">
+                    <button class="footer-start">Get started</button>
+                </a>
+                <a href="https://hirpo.vercel.app/">
+                    <button class="footer-login">Login</button>
+                </a>
+            </div>
+        </div>
+        <div class="bluegrad"></div>
+        <div class="right">
+            <div class="footer-right-content">
+                <img src="./assets/footerLogo.svg" alt="footerlogo">
+                <ul>
+                    <li><a href="index.html#home">About Hirpo</a></li>
+                    <li><a href="https://hirpo.vercel.app/dashboard">Dashboard</a></li>
+                    <li><a href="package.html">Pricing & Bills</a></li>
+                    <li><a href="index.html#newsletter">Contact us</a></li>
+                </ul>
+                <hr>
+                <p>Hirpo 2023</p>
+            </div>
+        </div>
+        <div class="redgrad"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
