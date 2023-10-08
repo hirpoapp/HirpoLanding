@@ -125,6 +125,7 @@ nav {
 
 .hamburger {
     display: none;
+    cursor: pointer;
 }
 
 .nav-logoGroups {
@@ -159,7 +160,7 @@ nav {
 }
 
 .nav-itemGroups li a {
-    font-size: 18px;
+    font-size: 14px;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     text-decoration: none;
     color: #000000;
@@ -1239,7 +1240,6 @@ nav {
 
     .nav-itemGroups li {
         list-style: none;
-        margin: 30px;
     }
 
     .nav-itemGroups li a {
