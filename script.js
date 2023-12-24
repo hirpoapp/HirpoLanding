@@ -4,6 +4,31 @@ const nav = document.querySelector(".nav");
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 const modal = document.querySelector(".packModal")
+const packBox = [...document.querySelectorAll(".packBox")]
+
+const prices = {
+    3: {
+        1: 250,
+        2: 450,
+        3: 800,
+        4: 1500,
+        5: 2600
+    },
+    6: {
+        1: 400,
+        2: 750,
+        3: 1300,
+        4: 2500,
+        5: 4200
+    },
+    12: {
+        1: 600,
+        2: 1125,
+        3: 1950,
+        4: 3750,
+        5: 6300
+    }
+}
 
 
 function hamburgerOpen() {
@@ -57,60 +82,45 @@ function applyDiscount(checkbox) {
     }
 }
 
-
-function openModal() {
-    modal.classList.add("activeModal")
-}
-
-function closeModal() {
-    modal.classList.remove("activeModal")
-}
-
-
 function changeStyle(element, price) {
     const packBoxes = document.getElementsByClassName("packBox");
     for (let i = 0; i < packBoxes.length; i++) {
         packBoxes[i].classList.remove("selected");
     }
     element.classList.add("selected");
-    const priceElement = element.querySelector(".price");
-    priceElement.textContent = price + "₼";
 }
-
-function prevPackage() {
-    const packages = document.querySelector(".packages");
-    packages.scrollLeft -= 350;
-}
-
-function nextPackage() {
-    const packages = document.querySelector(".packages");
-    packages.scrollLeft += 350;
-}
-
-
-
 
 const sendEmail = document.getElementById("sendButton");
 
 function sendMail() {
     var params = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
     };
-  
+
     const serviceID = "service_ezs2u7o";
     const templateID = "template_wedpjhh";
-  
-      emailjs.send(serviceID, templateID, params)
-      .then(res=>{
-          document.getElementById("name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("message").value = "";
-          console.log(res);
-          alert("Your message sent successfully!!")
-  
-      })
-      .catch(err=>console.log(err));
-  
-  }
+
+    emailjs.send(serviceID, templateID, params)
+        .then(res => {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            console.log(res);
+            alert("Your message sent successfully!!")
+
+        })
+        .catch(err => console.log(err));
+
+}
+
+function changePlan(button, month) {
+    const buttons = [...document.querySelectorAll(".buttons button")]
+    buttons.map(button => button.classList.remove("active"))
+    button.classList.add("active")
+    packBox.map((box, index) => {
+        box.querySelector(".price").innerHTML = `${Object.values(prices[month])[index]}₼`
+        box.querySelector(".month").innerHTML = `per ${month} month`
+    })
+}

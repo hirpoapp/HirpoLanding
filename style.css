@@ -1600,3 +1600,53 @@ nav {
 
 
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: var(--dark);
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 100vmax;
+    font-size: 14px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    color: #ffff;
+    font-size: 16px !important;
+}
+
+.buttons button.planButton {
+    padding: 10px 25px;
+    border-radius: 6px;
+    margin: 30px 20px;
+    width: 200px;
+    border: 1px solid var(--blue);
+    background: var(--blue);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+}
+
+.buttons button.planButton.active {
+    background: var(--dark);
+}
+
+.buttons button.planButton:last-child::after {
+    content: "25% discount";
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    background: var(--dark);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.buttons button.planButton.active:last-child::after {
+    background: var(--blue);
+}
