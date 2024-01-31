@@ -110,6 +110,7 @@ nav {
 
 .menu {
     display: flex;
+    align-items: center;
     width: 70%;
     justify-content: space-between;
 }
@@ -1671,4 +1672,20 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+select{
+    width: 70px;
+    height: 40px;
+    padding: 0 10px;
+    margin: 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    outline: none;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
 }

@@ -32,23 +32,25 @@
       </a>
       <div class="menu">
         <ul class="nav-itemGroups">
-          <li onclick="hamburgerOpen()"><a href="#home">About Hirpo</a></li>
-          <!-- <li onclick="hamburgerOpen()">
-            <a href="https://app.hirpo.net/dashboard">Dashboard</a>
-          </li> -->
+          <li onclick="hamburgerOpen()"><a href="#home" data-translate="li1">About Hirpo</a></li>
           <li onclick="hamburgerOpen()">
-            <a href="package.html">Pricing & Bills</a>
+            <a href="package.html" data-translate="li2">Pricing & Bills</a>
           </li>
           <li onclick="hamburgerOpen()">
-            <a href="#newsletter">Contact us</a>
+            <a href="#newsletter" data-translate="li3">Contact Us</a>
           </li>
         </ul>
+        <select name="lang" id="lang" onchange="translatePage(this)">
+          <option selected value="en">EN</option>
+          <option value="az">AZ</option>
+          <option value="ru">RU</option>
+        </select>
         <div class="nav-buttonGroups">
           <a href="https://app.hirpo.net/">
-            <button class="nav-login">Login</button>
+            <button class="nav-login" data-translate="login">Login</button>
           </a>
           <a href="https://app.hirpo.net/signup">
-            <button class="nav-start">Get started</button>
+            <button class="nav-start" data-translate="get_started">Get started</button>
           </a>
         </div>
       </div>
@@ -62,9 +64,9 @@
     <section id="home" class="home">
       <div class="home-left">
         <div class="home-content">
-          <h1>
+          <h1 data-translate="heading1">
             <span class="ready"
-              ><img src="./assets/bluecircle.png" alt="bluecircle" />Ready</span
+              ><img src="./assets/bluecircle.png" alt="bluecircle" /> Ready</span
             >
             and
             <span class="easy"
@@ -72,14 +74,14 @@
             >
             to use performance management solutions
           </h1>
-          <p>
+          <p data-translate="text1">
             Hirpo enables you to easily automate 70% of the solution process
             through the information available in the database. With Hirpo, you
             can effectively carry out the performance evaluation process of your
             employees.
           </p>
           <a href="https://app.hirpo.net/signup">
-            <button>Get started</button>
+            <button data-translate="get_started">Get started</button>
           </a>
         </div>
       </div>
@@ -93,12 +95,12 @@
     <section class="secondsection">
       <div class="redgrad"></div>
       <div class="secondsection-content">
-        <h1>
+        <h1 data-translate="text2">
           Save time on performance evaluations that would typically take months.
           We can handle it for you in just
         </h1>
-        <h2>3 hours</h2>
-        <p>
+        <h2 data-translate="text3">3 hours</h2>
+        <p data-translate="text4">
           Hirpo's proposed impact allows you to save time through automated
           solutions. We can efficiently handle these time-consuming stages that
           would typically take months using our accumulated data, completing
@@ -107,15 +109,15 @@
         <div class="secondsection-content-icons">
           <div>
             <img src="./assets/timesave.svg" alt="" />
-            <p>Time saving</p>
+            <p data-translate="icon1">Time saving</p>
           </div>
           <div>
             <img src="./assets/userFriendly.svg" alt="" />
-            <p>User friendly</p>
+            <p data-translate="icon2">User friendly</p>
           </div>
           <div>
             <img src="./assets/secure.svg" alt="" />
-            <p>Secure</p>
+            <p data-translate="icon3">Secure</p>
           </div>
         </div>
       </div>
@@ -127,10 +129,10 @@
           <img class="stepimg" src="./assets/signup.png" alt="signup" />
         </div>
         <div class="right step-content">
-          <h1>Ready to see how it works?</h1>
+          <h1 data-translate="heading2">Ready to see how it works?</h1>
           <div>
             <img src="./assets/1.svg" alt="" />
-            <p>
+            <p data-translate="text5">
               First, go through the registration process for <span>Hirpo</span>
             </p>
           </div>
@@ -142,16 +144,16 @@
         <div class="left step-content">
           <div>
             <img src="./assets/2.svg" alt="" />
-            <p>
+            <p data-translate="text6">
               Proceed to the
               <span><img src="./assets/bluecircle.png" alt="" />Wizard </span>
             </p>
           </div>
-          <p class="wizardOne">
+          <p class="wizardOne" data-translate="text7">
             Simply answer
             <span><img src="./assets/pinkline.png" alt="" />3 questions </span>
           </p>
-          <p class="wizardTwo">Start the <span>magic</span> in a short time</p>
+          <p data-translate="text18" class="wizardTwo">Start the <span>magic</span> in a short time</p>
         </div>
         <div class="right">
           <img class="stepimg" src="./assets/wizard.png" alt="signup" />
@@ -163,10 +165,10 @@
     <section id="newsletter" class="newsletter">
       <div class="redgrad"></div>
       <div class="newsletter-content">
-        <h3>Do you have a question?</h3>
+        <h3 data-translate="heading3">Do you have a question?</h3>
         <div id="contact-form">
           <div class="field">
-            <label for="name">Name</label>
+            <label for="name" data-translate="label1">Name</label>
             <input
               type="text"
               name="from_name"
@@ -176,7 +178,7 @@
             />
           </div>
           <div class="field">
-            <label for="email">Email</label>
+            <label for="email" data-translate="label2">Email</label>
             <input
               type="email"
               name="email"
@@ -196,7 +198,7 @@
           </div>
 
           <button id="sendButton" onclick="sendMail()">
-            <img src="./assets/sent.svg" alt="" />Sent
+            <img src="./assets/sent.svg" alt="" /> <span data-translate="send">Send</span>
           </button>
         </div>
       </div>
@@ -204,8 +206,8 @@
 
     <div class="footer">
       <div class="left">
-        <h1>Ready and easy to use performance management solutions</h1>
-        <p>
+        <h1 data-translate="heading1">Ready and easy to use performance management solutions</h1>
+        <p data-translate="text1">
           Hirpo enables you to easily automate 70% of the solution process
           through the information available in the database. With Hirpo, you can
           effectively carry out the performance evaluation process of your
@@ -213,10 +215,10 @@
         </p>
         <div class="footer-buttonGroups">
           <a href="https://app.hirpo.net/signup">
-            <button class="footer-start">Get started</button>
+            <button class="footer-start" data-translate="get_started">Get started</button>
           </a>
           <a href="https://app.hirpo.net/">
-            <button class="footer-login">Login</button>
+            <button class="footer-login" data-translate="login">Login</button>
           </a>
         </div>
       </div>
@@ -225,10 +227,10 @@
         <div class="footer-right-content">
           <img src="./assets/footerLogo.svg" alt="footerlogo" />
           <ul>
-            <li><a href="#home">About Hirpo</a></li>
+            <li><a href="#home" data-translate="li1">About Hirpo</a></li>
             <!-- <li><a href="https://app.hirpo.net/dashboard">Dashboard</a></li> -->
-            <li><a href="package.html">Pricing & Bills</a></li>
-            <li><a href="#newsletter">Contact us</a></li>
+            <li><a href="package.html" data-translate="li2">Pricing & Bills</a></li>
+            <li><a href="#newsletter" data-translate="li3">Contact us</a></li>
           </ul>
           <hr />
           <p>Hirpo 2023</p>
@@ -237,6 +239,7 @@
       <div class="redgrad"></div>
     </div>
 
+    <script src="lang.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
