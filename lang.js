@@ -82,7 +82,7 @@ const languages = {
         "employees": "İşçi",
         "trial": "1 Ay Pulsuz Sınaq",
         "wizard": "Möcüzə",
-        "self_editing": "Özünü Redaktə Et",
+        "self_editing": "Özün Redaktə Et",
         "6_months": "6 Aylıq Plan",
         "1_year": "1 İllik Plan",
         "get_plan": "Planı Al",
