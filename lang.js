@@ -5,7 +5,7 @@ const languages = {
         "li1":"About HIRPO",
         "li2":"Pricing & Bills",
         "li3":"Contact Us",
-        "heading1": "Ready and to use performance management solutions ",
+        "heading1": "Ready and easy to use performance management solutions ",
         "login":"Login",
         "get_started":"Get Started",
         "text1":"Hirpo enables you to easily automate 70% of the solution process through the information available in the database. With Hirpo, you can effectively carry out the performance evaluation process of your employees. ",
