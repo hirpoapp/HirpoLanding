@@ -141,7 +141,7 @@ const languages = {
     }
 }
 
-let currentLanguage = "az";
+let currentLanguage = "en";
 
 function translatePage(e) {
     translate.forEach(element => {
