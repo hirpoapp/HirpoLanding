@@ -1597,6 +1597,11 @@ nav {
         background-color: #bbb;
     }
 
+    iframe{
+        width: 90%;
+        height: 350px;
+    
+    }
 
 }
 
@@ -1689,3 +1694,13 @@ select{
     font-size: 16px;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
+
+section.iframe{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
