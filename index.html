@@ -1,248 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="mailru-domain" content="ydcCKpo8ji54OJ89" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hirpo</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <link rel="icon" href="./assets/navLogo.svg" />
+	<head>
+		<meta name="mailru-domain" content="ydcCKpo8ji54OJ89" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hirpo</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<link rel="icon" href="./assets/navLogo.svg" />
 
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("DzO4hPts8d7ZxPryV");
-      })();
-    </script>
-  </head>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+		></script>
+		<script type="text/javascript">
+			(function () {
+				emailjs.init("DzO4hPts8d7ZxPryV");
+			})();
+		</script>
+	</head>
 
-  <body>
-    <nav class="nav">
-      <a class="nav-logoGroups" href="/">
-        <img src="./assets/navLogo.svg" alt="" />
-        <h2>Hirpo</h2>
-      </a>
-      <div class="menu">
-        <ul class="nav-itemGroups">
-          <li onclick="hamburgerOpen()"><a href="#home" data-translate="li1">About Hirpo</a></li>
-          <li onclick="hamburgerOpen()">
-            <a href="package.html" data-translate="li2">Pricing & Bills</a>
-          </li>
-          <li onclick="hamburgerOpen()">
-            <a href="#newsletter" data-translate="li3">Contact Us</a>
-          </li>
-        </ul>
-        <select name="lang" id="lang" onchange="translatePage(this)">
-          <option selected value="en">EN</option>
-          <option value="az">AZ</option>
-          <option value="ru">RU</option>
-        </select>
-        <div class="nav-buttonGroups">
-          <a href="https://app.hirpo.net/">
-            <button class="nav-login" data-translate="login">Login</button>
-          </a>
-          <a href="https://app.hirpo.net/signup">
-            <button class="nav-start" data-translate="get_started">Get started</button>
-          </a>
-        </div>
-      </div>
-      <div class="hamburger" onclick="hamburgerOpen()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
-    </nav>
+	<body>
+		<nav class="nav">
+			<a class="nav-logoGroups" href="/">
+				<img src="./assets/navLogo.svg" alt="" />
+				<h2>Hirpo</h2>
+			</a>
+			<div class="menu">
+				<ul class="nav-itemGroups">
+					<li onclick="hamburgerOpen()">
+						<a href="#home" data-translate="li1">About Hirpo</a>
+					</li>
+					<li onclick="hamburgerOpen()">
+						<a href="package.html" data-translate="li2">Pricing & Bills</a>
+					</li>
+					<li onclick="hamburgerOpen()">
+						<a href="#newsletter" data-translate="li3">Contact Us</a>
+					</li>
+				</ul>
+				<select name="lang" id="lang" onchange="translatePage(this)">
+					<option selected value="en">EN</option>
+					<option value="az">AZ</option>
+					<option value="ru">RU</option>
+				</select>
+				<div class="nav-buttonGroups">
+					<a href="https://app.hirpo.net/">
+						<button class="nav-login" data-translate="login">Login</button>
+					</a>
+					<a href="https://app.hirpo.net/signup">
+						<button class="nav-start" data-translate="get_started">
+							Get started
+						</button>
+					</a>
+				</div>
+			</div>
+			<div class="hamburger" onclick="hamburgerOpen()">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+		</nav>
 
-    <section id="home" class="home">
-      <div class="home-left">
-        <div class="home-content">
-          <h1 data-translate="heading1">
-            <span class="ready"
-              ><img src="./assets/bluecircle.png" alt="bluecircle" /> Ready</span
-            >
-            and
-            <span class="easy"
-              ><img src="./assets/easyline.png" alt="pinkline" />easy</span
-            >
-            to use performance management solutions
-          </h1>
-          <p data-translate="text1">
-            Hirpo enables you to easily automate 70% of the solution process
-            through the information available in the database. With Hirpo, you
-            can effectively carry out the performance evaluation process of your
-            employees.
-          </p>
-          <a href="https://app.hirpo.net/signup">
-            <button data-translate="get_started">Get started</button>
-          </a>
-        </div>
-      </div>
-      <div class="home-right">
-        <img src="assets/dashboard.png" alt="" />
-      </div>
-      <div class="bluegrad"></div>
-      <div class="redgrad"></div>
-    </section>
-    <section class="iframe">
-      <iframe width="80%" height="500px" src="https://www.youtube.com/embed/n9rWuZJcz3Q?si=G2XcQaU1qdUtVpd1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
-    <section class="secondsection">
-      <div class="redgrad"></div>
-      <div class="secondsection-content">
-        <h1 data-translate="text2">
-          Save time on performance evaluations that would typically take months.
-          We can handle it for you in just
-        </h1>
-        <h2 data-translate="text3">3 hours</h2>
-        <p data-translate="text4">
-          Hirpo's proposed impact allows you to save time through automated
-          solutions. We can efficiently handle these time-consuming stages that
-          would typically take months using our accumulated data, completing
-          them in a very short time.
-        </p>
-        <div class="secondsection-content-icons">
-          <div>
-            <img src="./assets/timesave.svg" alt="" />
-            <p data-translate="icon1">Time saving</p>
-          </div>
-          <div>
-            <img src="./assets/userFriendly.svg" alt="" />
-            <p data-translate="icon2">User friendly</p>
-          </div>
-          <div>
-            <img src="./assets/secure.svg" alt="" />
-            <p data-translate="icon3">Secure</p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<section id="home" class="home">
+			<div class="home-left">
+				<div class="home-content">
+					<h1 data-translate="heading1">
+						<span class="ready"
+							><img src="./assets/bluecircle.png" alt="bluecircle" />
+							Ready</span
+						>
+						and
+						<span class="easy"
+							><img src="./assets/easyline.png" alt="pinkline" />easy</span
+						>
+						to use performance management solutions
+					</h1>
+					<p data-translate="text1">
+						Hirpo enables you to easily automate 70% of the solution process
+						through the information available in the database. With Hirpo, you
+						can effectively carry out the performance evaluation process of your
+						employees.
+					</p>
+					<a href="https://app.hirpo.net/signup">
+						<button data-translate="get_started">Get started</button>
+					</a>
+				</div>
+			</div>
+			<div class="home-right">
+				<img src="assets/dashboard.png" alt="" />
+			</div>
+			<div class="bluegrad"></div>
+			<div class="redgrad"></div>
+		</section>
+		<section class="iframe">
+			<iframe
+				width="80%"
+				height="500px"
+				src="https://www.youtube.com/embed/n9rWuZJcz3Q?si=G2XcQaU1qdUtVpd1"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+		</section>
+		<section class="secondsection">
+			<div class="redgrad"></div>
+			<div class="secondsection-content">
+				<h1 data-translate="text2">
+					Save time on performance evaluations that would typically take months.
+					We can handle it for you in just
+				</h1>
+				<h2 data-translate="text3">3 hours</h2>
+				<p data-translate="text4">
+					Hirpo's proposed impact allows you to save time through automated
+					solutions. We can efficiently handle these time-consuming stages that
+					would typically take months using our accumulated data, completing
+					them in a very short time.
+				</p>
+				<div class="secondsection-content-icons">
+					<div>
+						<img src="./assets/timesave.svg" alt="" />
+						<p data-translate="icon1">Time saving</p>
+					</div>
+					<div>
+						<img src="./assets/userFriendly.svg" alt="" />
+						<p data-translate="icon2">User friendly</p>
+					</div>
+					<div>
+						<img src="./assets/secure.svg" alt="" />
+						<p data-translate="icon3">Secure</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="stepsSection">
-      <div class="step stepOne">
-        <div class="left">
-          <img class="stepimg" src="./assets/signup.png" alt="signup" />
-        </div>
-        <div class="right step-content">
-          <h1 data-translate="heading2">Ready to see how it works?</h1>
-          <div>
-            <img src="./assets/1.svg" alt="" />
-            <p data-translate="text5">
-              First, go through the registration process for <span>Hirpo</span>
-            </p>
-          </div>
-        </div>
-        <div class="bluegrad"></div>
-      </div>
+		<section class="stepsSection">
+			<div class="step stepOne">
+				<div class="left">
+					<img class="stepimg" src="./assets/signup.png" alt="signup" />
+				</div>
+				<div class="right step-content">
+					<h1 data-translate="heading2">Ready to see how it works?</h1>
+					<div>
+						<img src="./assets/1.svg" alt="" />
+						<p data-translate="text5">
+							First, go through the registration process for <span>Hirpo</span>
+						</p>
+					</div>
+				</div>
+				<div class="bluegrad"></div>
+			</div>
 
-      <div class="step stepTwo">
-        <div class="left step-content">
-          <div>
-            <img src="./assets/2.svg" alt="" />
-            <p data-translate="text6">
-              Proceed to the
-              <span><img src="./assets/bluecircle.png" alt="" />Wizard </span>
-            </p>
-          </div>
-          <p class="wizardOne" data-translate="text7">
-            Simply answer
-            <span><img src="./assets/pinkline.png" alt="" />3 questions </span>
-          </p>
-          <p data-translate="text18" class="wizardTwo">Start the <span>magic</span> in a short time</p>
-        </div>
-        <div class="right">
-          <img class="stepimg" src="./assets/wizard.png" alt="signup" />
-        </div>
-        <div class="bluegrad"></div>
-      </div>
-    </section>
+			<div class="step stepTwo">
+				<div class="left step-content">
+					<div>
+						<img src="./assets/2.svg" alt="" />
+						<p data-translate="text6">
+							Proceed to the
+							<span><img src="./assets/bluecircle.png" alt="" />Wizard </span>
+						</p>
+					</div>
+					<p class="wizardOne" data-translate="text7">
+						Simply answer
+						<span><img src="./assets/pinkline.png" alt="" />3 questions </span>
+					</p>
+					<p data-translate="text18" class="wizardTwo">
+						Start the <span>magic</span> in a short time
+					</p>
+				</div>
+				<div class="right">
+					<img class="stepimg" src="./assets/wizard.png" alt="signup" />
+				</div>
+				<div class="bluegrad"></div>
+			</div>
+		</section>
 
-    <section id="newsletter" class="newsletter">
-      <div class="redgrad"></div>
-      <div class="newsletter-content">
-        <h3 data-translate="heading3">Do you have a question?</h3>
-        <div id="contact-form">
-          <div class="field">
-            <label for="name" data-translate="label1">Name</label>
-            <input
-              type="text"
-              name="from_name"
-              id="name"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-          <div class="field">
-            <label for="email" data-translate="label2">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div class="field">
-            <textarea
-              name="message"
-              id="message"
-              rows="7"
-              placeholder="Write your question"
-              required
-            ></textarea>
-          </div>
+		<section id="customers">
+			<h1 data-translate="customers">Customers</h1>
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img
+							src="./assets/customers/focus.png"
+							alt=""
+						/>
+					</div>
+					<div class="swiper-slide">
+						<img
+							src="./assets/customers/ghg.jpeg"
+							alt=""
+						/>
+					</div>
+					<div class="swiper-slide">
+						<img
+							src="./assets/customers/hroption.png"
+							alt=""
+						/>
+					</div>
+					<div class="swiper-slide">
+						<img
+							src="./assets/customers/mergen.png"
+							alt=""
+						/>
+					</div>
+					<div class="swiper-slide">
+						<img
+							src="./assets/customers/sundance.jpg"
+							alt=""
+						/>
+					</div>
+					<div class="swiper-slide">
+						<img
+							src="./assets/customers/unec.png"
+							alt=""
+						/>
+					</div>
+					<div class="swiper-slide">
+						<img
+							src="./assets/customers/zirve.png"
+							alt=""
+						/>
+					</div>
+					
+				</div>
+			</div>
+		</section>
 
-          <button id="sendButton" onclick="sendMail()">
-            <img src="./assets/sent.svg" alt="" /> <span data-translate="send">Send</span>
-          </button>
-        </div>
-      </div>
-    </section>
+		<section id="newsletter" class="newsletter">
+			<div class="redgrad"></div>
+			<div class="newsletter-content">
+				<h3 data-translate="heading3">Do you have a question?</h3>
+				<div id="contact-form">
+					<div class="field">
+						<label for="name" data-translate="label1">Name</label>
+						<input
+							type="text"
+							name="from_name"
+							id="name"
+							placeholder="Enter your name"
+							required
+						/>
+					</div>
+					<div class="field">
+						<label for="email" data-translate="label2">Email</label>
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="Enter your email"
+							required
+						/>
+					</div>
+					<div class="field">
+						<textarea
+							name="message"
+							id="message"
+							rows="7"
+							placeholder="Write your question"
+							required
+						></textarea>
+					</div>
 
-    <div class="footer">
-      <div class="left">
-        <h1 data-translate="heading1">Ready and easy to use performance management solutions</h1>
-        <p data-translate="text1">
-          Hirpo enables you to easily automate 70% of the solution process
-          through the information available in the database. With Hirpo, you can
-          effectively carry out the performance evaluation process of your
-          employees.
-        </p>
-        <div class="footer-buttonGroups">
-          <a href="https://app.hirpo.net/signup">
-            <button class="footer-start" data-translate="get_started">Get started</button>
-          </a>
-          <a href="https://app.hirpo.net/">
-            <button class="footer-login" data-translate="login">Login</button>
-          </a>
-        </div>
-      </div>
-      <div class="bluegrad"></div>
-      <div class="right">
-        <div class="footer-right-content">
-          <img src="./assets/footerLogo.svg" alt="footerlogo" />
-          <ul>
-            <li><a href="#home" data-translate="li1">About Hirpo</a></li>
-            <!-- <li><a href="https://app.hirpo.net/dashboard">Dashboard</a></li> -->
-            <li><a href="package.html" data-translate="li2">Pricing & Bills</a></li>
-            <li><a href="#newsletter" data-translate="li3">Contact us</a></li>
-          </ul>
-          <hr />
-          <p>Hirpo 2023</p>
-        </div>
-      </div>
-      <div class="redgrad"></div>
-    </div>
+					<button id="sendButton" onclick="sendMail()">
+						<img src="./assets/sent.svg" alt="" />
+						<span data-translate="send">Send</span>
+					</button>
+				</div>
+			</div>
+		</section>
 
-    <script src="lang.js"></script>
-    <script src="script.js"></script>
-  </body>
+		<div class="footer">
+			<div class="left">
+				<h1 data-translate="heading1">
+					Ready and easy to use performance management solutions
+				</h1>
+				<p data-translate="text1">
+					Hirpo enables you to easily automate 70% of the solution process
+					through the information available in the database. With Hirpo, you can
+					effectively carry out the performance evaluation process of your
+					employees.
+				</p>
+				<div class="footer-buttonGroups">
+					<a href="https://app.hirpo.net/signup">
+						<button class="footer-start" data-translate="get_started">
+							Get started
+						</button>
+					</a>
+					<a href="https://app.hirpo.net/">
+						<button class="footer-login" data-translate="login">Login</button>
+					</a>
+				</div>
+			</div>
+			<div class="bluegrad"></div>
+			<div class="right">
+				<div class="footer-right-content">
+					<img src="./assets/footerLogo.svg" alt="footerlogo" />
+					<ul>
+						<li><a href="#home" data-translate="li1">About Hirpo</a></li>
+						<!-- <li><a href="https://app.hirpo.net/dashboard">Dashboard</a></li> -->
+						<li>
+							<a href="package.html" data-translate="li2">Pricing & Bills</a>
+						</li>
+						<li><a href="#newsletter" data-translate="li3">Contact us</a></li>
+					</ul>
+					<hr />
+					<p>Hirpo 2023</p>
+				</div>
+			</div>
+			<div class="redgrad"></div>
+		</div>
+
+		<script src="lang.js"></script>
+		<script src="script.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		<script>
+			var swiper = new Swiper(".swiper", {
+				grabCursor: true,
+				a11y: false,
+				freeMode: true,
+				speed: 11000,
+				loop: true,
+				slidesPerView: 6,
+        spaceBetween: 10,
+				autoplay: {
+					disableOnInteraction: false,
+				},
+				breakpoints: {
+					0: {
+						swiperPerView: 2,
+					},
+					480: {
+					  slidesPerView: 3,
+					},
+					767: {
+					  slidesPerView: 4,
+					},
+					992: {
+					  slidesPerView: 5,
+					},
+				},
+			});
+		</script>
+	</body>
 </html>

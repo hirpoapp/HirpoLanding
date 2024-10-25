@@ -1704,3 +1704,33 @@ section.iframe{
     flex-direction: column;
 }
 
+
+section#customers h1{
+    font-size: 2.5rem;
+    margin: 20px;
+    text-align: center;
+}
+
+section#customers .swiper-wrapper{
+    padding: 50px 0;
+}
+
+section#customers .swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 8px 32px 0 rgba(210, 210, 255, 0.37);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+section#customers .swiper-slide img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}

@@ -46,6 +46,7 @@ const languages = {
         "per_3_m": "for 3 months",
         "per_6_m": "for 6 months",
         "per_1_y": "for yearly",
+        "customers": "Customers",
     },
     "az": {
         "li1":"HIRPO haqqında",
@@ -92,6 +93,7 @@ const languages = {
         "per_3_m": "3 ay üçün",
         "per_6_m": "6 ay üçün",
         "per_1_y": "illik üçün",
+        "customers": "Müştərilər",
     },
     "ru": {
         "li1":"О HIRPO",
@@ -138,6 +140,7 @@ const languages = {
         "per_3_m": "за 3 месяца",
         "per_6_m": "за 6 месяцев",
         "per_1_y": "за год",
+        "customers": "Клиенты",
     }
 }
 
