@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hirpo | About</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<link rel="icon" href="./assets/navLogo.svg" />
+	</head>
+	<body>
+		<nav class="nav">
+			<a class="nav-logoGroups" href="/">
+				<img src="./assets/navLogo.svg" alt="Hirpo logo" />
+				<h2>Hirpo</h2>
+			</a>
+			<div class="menu">
+					<ul class="nav-itemGroups">
+					<li onclick="hamburgerOpen()">
+						<a href="aboutus.html" data-translate="li1">About Hirpo</a>
+					</li>
+					<li onclick="hamburgerOpen()">
+						<a href="package.html" data-translate="li2">Pricing & Bills</a>
+					</li>
+					<li onclick="hamburgerOpen()">
+						<a href="contact.html" data-translate="li3">Contact Us</a>
+					</li>
+					<li onclick="hamburgerOpen()">
+						<a href="https://wa.me/+994702945070" data-translate="li4"
+							>Request Demo</a
+						>
+					</li>
+				</ul>
+				<select name="lang" id="lang" onchange="translatePage(this)">
+					<option selected value="en">EN</option>
+					<option value="az">AZ</option>
+					<option value="ru">RU</option>
+				</select>
+				<div class="nav-buttonGroups">
+					<a href="https://app.hirpo.net/">
+						<button class="nav-login" data-translate="login">Login</button>
+					</a>
+					<a href="https://app.hirpo.net/signup">
+						<button class="nav-start" data-translate="get_started">
+							Get started
+						</button>
+					</a>
+				</div>
+			</div>
+			<div class="hamburger" onclick="hamburgerOpen()">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+		</nav>
+
+		<main>
+			<section class="subpage-hero">
+				<div class="hero-content">
+					<h1 data-translate="about_heading">
+						AI-powered HR technology for smarter people operations
+					</h1>
+					<p data-translate="about_subheading">
+						Hirpo combines intuitive design with Agentic AI to automate
+						workflows, surface insights, and help teams grow with confidence.
+					</p>
+				</div>
+				<div class="bluegrad" style="top: -280px; right: -320px"></div>
+				<div class="redgrad" style="bottom: -260px; left: -320px"></div>
+			</section>
+
+			<section class="page-section">
+				<div class="content-wrapper story-section">
+					<h2 class="section-title" data-translate="about_story_title">
+						Why Hirpo
+					</h2>
+					<p data-translate="about_story_body1">
+						Hirpo is an AI-powered HR technology platform built to help
+						companies manage people smarter — across recruitment, performance,
+						learning, and analytics.
+					</p>
+					<p data-translate="about_story_body2">
+						We believe HR should be simple, data-driven, and human-centered.
+						That is why we blend intuitive design with Agentic AI capabilities
+						so HR teams can automate operations, gain real-time insights, and
+						make informed decisions that drive growth.
+					</p>
+				</div>
+			</section>
+
+			<section class="page-section">
+				<div class="content-wrapper contact-grid">
+					<div class="contact-card">
+						<h2 data-translate="about_mission_title">
+							Built for growing teams
+						</h2>
+						<p data-translate="about_mission_body">
+							Designed for SMEs and scaling organizations, Hirpo delivers
+							affordable tools that modernize HR operations without complexity.
+						</p>
+					</div>
+					<div class="info-card">
+						<h3 data-translate="about_values_title">Core modules</h3>
+						<ul class="flex-column">
+							<li data-translate="about_module_1">
+								Employee Journey Dashboard – real-time visibility into people
+								metrics and movements.
+							</li>
+							<li data-translate="about_module_2">
+								Performance &amp; Satisfaction – track goals, competencies, and
+								engagement.
+							</li>
+							<li data-translate="about_module_3">
+								Recruitment (ATS) – automate hiring and find the right
+								candidates faster.
+							</li>
+							<li data-translate="about_module_4">
+								Learning (LMS) – manage onboarding, courses, and development
+								plans.
+							</li>
+							<li data-translate="about_module_5">
+								HR Analytics – actionable insights and predictive dashboards for
+								leadership.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="page-section">
+				<div class="content-wrapper">
+					<div class="cta-card">
+						<h2 data-translate="about_cta_title">
+							Ready to transform your people operations?
+						</h2>
+						<a href="https://wa.me/+994702945070">
+							<button data-translate="about_cta_button">Request a demo</button>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<div class="footer">
+			<div class="left">
+				<h1 data-translate="heading1">
+					Ready and easy to use performance management solutions
+				</h1>
+				<p data-translate="text1">
+					Hirpo enables you to easily automate 70% of the solution process
+					through the information available in the database. With Hirpo, you can
+					effectively carry out the performance evaluation process of your
+					employees.
+				</p>
+				<div class="footer-buttonGroups">
+					<a href="https://app.hirpo.net/signup">
+						<button class="footer-start" data-translate="get_started">
+							Get started
+						</button>
+					</a>
+					<a href="https://app.hirpo.net/">
+						<button class="footer-login" data-translate="login">Login</button>
+					</a>
+				</div>
+			</div>
+			<div class="bluegrad"></div>
+
+			<div class="right">
+				<div class="footer-right-content">
+					<img src="./assets/footerLogo.svg" alt="footerlogo" />
+					<ul>
+						<li>
+							<a href="aboutus.html" data-translate="li1">About Hirpo</a>
+						</li>
+						<li>
+							<a href="package.html" data-translate="li2">Pricing & Bills</a>
+						</li>
+						<li><a href="contact.html" data-translate="li3">Contact us</a></li>
+						<li>
+							<a href="privacy-policy.html" data-translate="li5"
+								>Privacy Policy</a
+							>
+						</li>
+					</ul>
+					<hr />
+					<p>Hirpo 2024</p>
+				</div>
+			</div>
+			<div class="redgrad"></div>
+		</div>
+
+		<script src="lang.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

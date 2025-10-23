@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hirpo | Privacy Policy</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<link rel="icon" href="./assets/navLogo.svg" />
+	</head>
+	<body>
+		<nav class="nav">
+			<a class="nav-logoGroups" href="/">
+				<img src="./assets/navLogo.svg" alt="Hirpo logo" />
+				<h2>Hirpo</h2>
+			</a>
+			<div class="menu">
+					<ul class="nav-itemGroups">
+					<li onclick="hamburgerOpen()">
+						<a href="aboutus.html" data-translate="li1">About Hirpo</a>
+					</li>
+					<li onclick="hamburgerOpen()">
+						<a href="package.html" data-translate="li2">Pricing & Bills</a>
+					</li>
+					<li onclick="hamburgerOpen()">
+						<a href="contact.html" data-translate="li3">Contact Us</a>
+					</li>
+					<li onclick="hamburgerOpen()">
+						<a href="https://wa.me/+994702945070" data-translate="li4"
+							>Request Demo</a
+						>
+					</li>
+				</ul>
+				<select name="lang" id="lang" onchange="translatePage(this)">
+					<option selected value="en">EN</option>
+					<option value="az">AZ</option>
+					<option value="ru">RU</option>
+				</select>
+				<div class="nav-buttonGroups">
+					<a href="https://app.hirpo.net/">
+						<button class="nav-login" data-translate="login">Login</button>
+					</a>
+					<a href="https://app.hirpo.net/signup">
+						<button class="nav-start" data-translate="get_started">
+							Get started
+						</button>
+					</a>
+				</div>
+			</div>
+			<div class="hamburger" onclick="hamburgerOpen()">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+		</nav>
+
+		<main>
+			<section class="subpage-hero">
+				<div class="hero-content">
+					<h1 data-translate="privacy_heading">Privacy Policy</h1>
+					<p data-translate="privacy_updated">Last updated: October 1, 2025</p>
+				</div>
+				<div class="bluegrad" style="top: -300px; right: -320px"></div>
+				<div class="redgrad" style="bottom: -240px; left: -320px"></div>
+			</section>
+
+			<section class="page-section">
+				<div class="content-wrapper">
+					<div class="policy-section">
+						<p data-translate="privacy_section">
+							At Hirpo, your privacy is our priority. We respect the
+							confidentiality of every user of our platform and services, and we
+							clearly explain how your data is collected, used, and protected.
+							We may collect personal information such as your name, email,
+							phone number, and company details, as well as technical
+							information like IP address, browser type, and device data. This
+							information is used solely to improve service quality, ensure
+							security, and provide technical support. Your data is shared only
+							with trusted technical partners or when required by law. Hirpo
+							never sells or trades your personal information. You may contact
+							us anytime to request deletion or correction of your data.
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<div class="footer">
+			<div class="left">
+				<h1 data-translate="heading1">
+					Ready and easy to use performance management solutions
+				</h1>
+				<p data-translate="text1">
+					Hirpo enables you to easily automate 70% of the solution process
+					through the information available in the database. With Hirpo, you can
+					effectively carry out the performance evaluation process of your
+					employees.
+				</p>
+				<div class="footer-buttonGroups">
+					<a href="https://app.hirpo.net/signup">
+						<button class="footer-start" data-translate="get_started">
+							Get started
+						</button>
+					</a>
+					<a href="https://app.hirpo.net/">
+						<button class="footer-login" data-translate="login">Login</button>
+					</a>
+				</div>
+			</div>
+			<div class="bluegrad"></div>
+			<div class="right">
+				<div class="footer-right-content">
+					<img src="./assets/footerLogo.svg" alt="footerlogo" />
+					<ul>
+						<li>
+							<a href="aboutus.html" data-translate="li1">About Hirpo</a>
+						</li>
+						<li>
+							<a href="package.html" data-translate="li2">Pricing & Bills</a>
+						</li>
+						<li><a href="contact.html" data-translate="li3">Contact us</a></li>
+						<li>
+							<a href="privacy-policy.html" data-translate="li5"
+								>Privacy Policy</a
+							>
+						</li>
+					</ul>
+					<hr />
+					<p>Hirpo 2024</p>
+				</div>
+			</div>
+			<div class="redgrad"></div>
+		</div>
+
+		<script src="lang.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
