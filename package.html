@@ -1,328 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
-    <title>Hirpo</title>
-    <link rel="stylesheet"
-        href="style.css" />
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet"
-        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-        crossorigin="anonymous" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>Hirpo</title>
+        <link rel="stylesheet"
+            href="style.css" />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossorigin="anonymous" />
 
-    <link rel="icon"
-        href="./assets/navLogo.svg" />
-</head>
+        <link rel="icon"
+            href="./assets/navLogo.svg" />
+    </head>
 
-<body>
-    <nav class="nav">
-        <a class="nav-logoGroups" href="/">
-          <img src="./assets/navLogo.svg" alt="" />
-          <h2>Hirpo</h2>
-        </a>
-        <div class="menu">
-          	<ul class="nav-itemGroups">
-					<li onclick="hamburgerOpen()">
-						<a href="aboutus.html" data-translate="li1">About Hirpo</a>
-					</li>
-					<li onclick="hamburgerOpen()">
-						<a href="package.html" data-translate="li2">Pricing & Bills</a>
-					</li>
-					<li onclick="hamburgerOpen()">
-						<a href="contact.html" data-translate="li3">Contact Us</a>
-					</li>
-					<li onclick="hamburgerOpen()">
-						<a href="https://wa.me/+994702945070" data-translate="li4"
-							>Request Demo</a
-						>
-					</li>
-				</ul>
-          <select name="lang" id="lang" onchange="translatePage(this)">
-            <option selected value="en">EN</option>
-            <option value="az">AZ</option>
-            <option value="ru">RU</option>
-          </select>
-          <div class="nav-buttonGroups">
-            <a href="https://app.hirpo.net/">
-              <button class="nav-login" data-translate="login">Login</button>
+    <body>
+        <nav class="nav">
+            <a class="nav-logoGroups"
+                href="/">
+                <img src="./assets/navLogo.svg"
+                    alt />
+                <h2>Hirpo</h2>
             </a>
-            <a href="https://app.hirpo.net/signup">
-              <button class="nav-start" data-translate="get_started">Get started</button>
-            </a>
-          </div>
-        </div>
-        <div class="hamburger" onclick="hamburgerOpen()">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-        </div>
-      </nav>
-
-    <div class="packageBody">
-        <div class="planBox">
-            <h3 data-translate="heading4">Choose a plan tailored to your needs</h3>
-            <div class="buttons">
-                <button class="planButton active"
-                    onclick="changePlan(this,3)" data-translate="3_m">3 Month</button>
-                <button class="planButton"
-                    onclick="changePlan(this,6)" data-translate="6_m">6 Month</button>
-                <button class="planButton"
-                    onclick="changePlan(this,12)" data-translate="1_y">Yearly</button>
-            </div>
-        </div>
-        <div class="packages package-carousel">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="packBox"
-                            onclick="changeStyle(this, 50)">
-                            <div class="packHead">
-                                <div>
-                                    <img src="./assets/s.svg"
-                                        alt="smallPackicon" />
-                                        <h2 data-translate="plan1">Small Enterprise Plan</h2>
-                                </div>
-                                <div>
-                                    <div>
-                                        <span class="old-price"></span>
-                                        <b class="price">250₼</b>
-                                    </div>
-                                    <b>
-                                        <span class="month" data-translate="per_3_m">per 3 month</span>
-                                    </b>
-                                </div>
-                            </div>
-                            <button class="getStartedpack"
-                                Get
-                                started
-                                </button>
-                                <div
-                                class="packBody">
-                                <p>0-20 <span data-translate="employees">employees</span></p>
-                                <ul>
-                                    <li><img src="./assets/done.svg" alt="done" ><span data-translate="wizard">Wizard</span></li>
-                                    <li><img src="./assets/done.svg" alt="done" ><span data-translate="self_editing">Self-editing</span></li>
-                                </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="packBox"
-                        onclick="changeStyle(this, 50)">
-                        <div class="packHead">
-                            <div>
-                                <img src="./assets/s.svg"
-                                    alt="smallPackicon" />
-                                    <h2 data-translate="plan1">Small Enterprise Plan</h2>
-                            </div>
-                            <div>
-                                <div>
-                                    <span class="old-price"></span>
-                                    <b class="price">450₼</b>
-                                </div>
-                                <b>
-                                    <span class="month" data-translate="per_3_m">per 3 month</span>
-                                </b>
-                            </div>
-                        </div>
-                        <button class="getStartedpack"
-                            Get
-                            started
-                            </button>
-                            <div
-                            class="packBody">
-                            <p>21-49<span data-translate="employees">employees</span></p>
-                            <ul>
-                                <li><img src="./assets/done.svg" alt="done" ><span data-translate="wizard">Wizard</span></li>
-                                <li><img src="./assets/done.svg" alt="done" ><span data-translate="self_editing">Self-editing</span></li>
-                            </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="packBox selected"
-                    onclick="changeStyle(this, 150)">
-                    <div class="packHead">
-                        <div>
-                            <img src="./assets/m.svg"
-                                alt="smallPackicon" />
-                            <h2 data-translate="plan2">Medium Enterprise Plan</h2>
-                        </div>
-                        <div>
-                            <div>
-                                <span class="old-price"></span>
-                                <b class="price">800₼</b>
-                            </div>
-                            <b>
-                                <span class="month" data-translate="per_3_m">per 3 month</span>
-                            </b>
-                        </div>
-                    </div>
-                    <button class="getStartedpack"
-                        Get
-                        started
-                        </button>
-                        <div
-                        class="packBody">
-                        <p>50-100 <span data-translate="employees">employees</span></p>
-                        <ul>
-                            <li><img src="./assets/done.svg" alt="done" ><span data-translate="wizard">Wizard</span></li>
-                            <li><img src="./assets/done.svg" alt="done" ><span data-translate="self_editing">Self-editing</span></li>
-                        </ul>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="packBox"
-                onclick="changeStyle(this, 350)">
-                <div class="packHead">
-                    <div>
-                        <img src="./assets/large.svg"
-                            alt="smallPackicon" />
-                        <h2 data-translate="plan3">Large Enterprise Plan</h2>
-                    </div>
-                    <div>
-                        <div>
-                            <span class="old-price"></span>
-                            <b class="price">1500₼</b>
-                        </div>
-                        <b>
-                            <span class="month" data-translate="per_3_m">per 3 month</span>
-                        </b>
-                    </div>
-                </div>
-                <button class="getStartedpack"
-                    Get
-                    started
-                    </button>
-                    <div
-                    class="packBody">
-                    <p>101 - 200 <span data-translate="employees">employees</span></p>
-                    <ul>
-                        <li><img src="./assets/done.svg" alt="done" ><span data-translate="wizard">Wizard</span></li>
-                        <li><img src="./assets/done.svg" alt="done" ><span data-translate="self_editing">Self-editing</span></li>
-                    </ul>
-            </div>
-        </div>
-    </div>
-    <div class="swiper-slide">
-        <div class="packBox"
-            onclick="changeStyle(this, 750)">
-            <div class="packHead">
-                <div>
-                    <img src="./assets/star.svg"
-                        alt="smallPackicon" />
-                    <h2 data-translate="plan4">Corporate Enterprise Plan</h2>
-                </div>
-                <div>
-                    <div>
-                        <span class="old-price"></span>
-                        <b class="price">2600₼</b>
-                    </div>
-                    <b>
-                        <span class="month" data-translate="per_3_m">per 3 month</span>
-                    </b>
-                </div>
-            </div>
-            <button class="getStartedpack"
-                Get
-                started
-                </button>
-                <div
-                class="packBody">
-                <p>201-500 <span data-translate="employees">employees</span></p>
-                <ul>
-                    <li><img src="./assets/done.svg" alt="done" ><span data-translate="wizard">Wizard</span></li>
-                    <li><img src="./assets/done.svg" alt="done" ><span data-translate="self_editing">Self-editing</span></li>
+            <div class="menu">
+                <ul class="nav-itemGroups">
+                    <li onclick="hamburgerOpen()">
+                        <a href="aboutus.html"
+                            data-translate="li1">About
+                            Hirpo</a>
+                    </li>
+                    <li onclick="hamburgerOpen()">
+                        <a href="package.html"
+                            data-translate="li2">Pricing &
+                            Bills</a>
+                    </li>
+                    <li onclick="hamburgerOpen()">
+                        <a href="contact.html"
+                            data-translate="li3">Contact
+                            Us</a>
+                    </li>
+                    <li onclick="hamburgerOpen()">
+                        <a href="https://wa.me/+994702945070"
+                            data-translate="li4">Request Demo</a>
+                    </li>
                 </ul>
+                <select name="lang"
+                    id="lang"
+                    onchange="translatePage(this)">
+                    <option selected
+                        value="en">EN</option>
+                    <option value="az">AZ</option>
+                    <option value="ru">RU</option>
+                </select>
+                <div class="nav-buttonGroups">
+                    <a href="https://app.hirpo.net/">
+                        <button class="nav-login"
+                            data-translate="login">Login</button>
+                    </a>
+                    <a href="https://app.hirpo.net/signup">
+                        <button class="nav-start"
+                            data-translate="get_started">Get started</button>
+                    </a>
+                </div>
+            </div>
+            <div class="hamburger"
+                onclick="hamburgerOpen()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+
+        <div class="packageBody">
+            <div class="planBox">
+                <h3 data-translate="heading4">Choose a plan tailored to your
+                    needs</h3>
+                <div class="buttons">
+                    <button class="planButton active"
+                        onclick="changePlan(this,3)"
+                        data-translate="3_m">3
+                        Month</button>
+                    <button class="planButton"
+                        onclick="changePlan(this,6)"
+                        data-translate="6_m">6
+                        Month</button>
+                    <button class="planButton"
+                        onclick="changePlan(this,12)"
+                        data-translate="1_y">Yearly</button>
+                </div>
+            </div>
+            <div class="packages package-carousel">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="packBox"
+                                onclick="changeStyle(this, 50)">
+                                <div class="packHead">
+                                    <div>
+                                        <img src="./assets/s.svg"
+                                            alt="smallPackicon" />
+                                        <h2 data-translate="plan1">Micro
+                                            Business Plan</h2>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="old-price"></span>
+                                            <b class="price">313₼</b>
+                                        </div>
+                                        <b>
+                                            <span class="month"
+                                                data-translate="per_3_m">for 3
+                                                months</span>
+                                        </b>
+                                    </div>
+                                </div>
+                                <button class="getStartedpack"
+                                    Get
+                                    started
+                                    </button>
+                                    <div class="packBody">
+                                        <p>0-20 <span data-translate="employees">employees</span></p>
+                                        <ul>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="wizard">Wizard</span></li>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="self_editing">Self-editing</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="packBox"
+                                onclick="changeStyle(this, 50)">
+                                <div class="packHead">
+                                    <div>
+                                        <img src="./assets/s.svg"
+                                            alt="smallPackicon" />
+                                        <h2 data-translate="plan2">Small
+                                            Business Plan</h2>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="old-price"></span>
+                                            <b class="price">563₼</b>
+                                        </div>
+                                        <b>
+                                            <span class="month"
+                                                data-translate="per_3_m">for
+                                                3 months</span>
+                                        </b>
+                                    </div>
+                                </div>
+                                <button class="getStartedpack"
+                                    Get
+                                    started
+                                    </button>
+                                    <div class="packBody">
+                                        <p>21-49<span data-translate="employees">employees</span></p>
+                                        <ul>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="wizard">Wizard</span></li>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="self_editing">Self-editing</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="packBox selected"
+                                onclick="changeStyle(this, 150)">
+                                <div class="packHead">
+                                    <div>
+                                        <img src="./assets/m.svg"
+                                            alt="smallPackicon" />
+                                        <h2 data-translate="plan3">Medium
+                                            Enterprise Plan</h2>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="old-price"></span>
+                                            <b class="price">1000₼</b>
+                                        </div>
+                                        <b>
+                                            <span class="month"
+                                                data-translate="per_3_m">for
+                                                3 months</span>
+                                        </b>
+                                    </div>
+                                </div>
+                                <button class="getStartedpack"
+                                    Get
+                                    started
+                                    </button>
+                                    <div class="packBody">
+                                        <p>50-100 <span data-translate="employees">employees</span></p>
+                                        <ul>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="wizard">Wizard</span></li>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="self_editing">Self-editing</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="packBox"
+                                onclick="changeStyle(this, 350)">
+                                <div class="packHead">
+                                    <div>
+                                        <img src="./assets/large.svg"
+                                            alt="smallPackicon" />
+                                        <h2 data-translate="plan4">Large
+                                            Enterprise Plan</h2>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="old-price"></span>
+                                            <b class="price">2025₼</b>
+                                        </div>
+                                        <b>
+                                            <span class="month"
+                                                data-translate="per_3_m">for
+                                                3 months</span>
+                                        </b>
+                                    </div>
+                                </div>
+                                <button class="getStartedpack"
+                                    Get
+                                    started
+                                    </button>
+                                    <div class="packBody">
+                                        <p>101 - 200 <span data-translate="employees">employees</span></p>
+                                        <ul>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="wizard">Wizard</span></li>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="self_editing">Self-editing</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="packBox"
+                                onclick="changeStyle(this, 750)">
+                                <div class="packHead">
+                                    <div>
+                                        <img src="./assets/star.svg"
+                                            alt="smallPackicon" />
+                                        <h2 data-translate="plan5">
+                                            Corporate Business Plan</h2>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="old-price"></span>
+                                            <b class="price">3640₼</b>
+                                        </div>
+                                        <b>
+                                            <span class="month"
+                                                data-translate="per_3_m">for
+                                                3 months</span>
+                                        </b>
+                                    </div>
+                                </div>
+                                <button class="getStartedpack"
+                                    Get
+                                    started
+                                    </button>
+                                    <div class="packBody">
+                                        <p>201-500 <span data-translate="employees">employees</span></p>
+                                        <ul>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="wizard">Wizard</span></li>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="self_editing">Self-editing</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="packBox"
+                                onclick="changeStyle(this, 750)">
+                                <div class="packHead">
+                                    <div>
+                                        <img src="./assets/star.svg"
+                                            alt="smallPackicon" />
+                                        <h2 data-translate="plan6">Large
+                                            Corporate Plan</h2>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="old-price"></span>
+                                            <b class="price">5460₼</b>
+                                        </div>
+                                        <b>
+                                            <span class="month"
+                                                data-translate="per_3_m">for
+                                                3 months</span>
+                                        </b>
+                                    </div>
+                                </div>
+                                <button class="getStartedpack"
+                                    Get
+                                    started
+                                    </button>
+                                    <div class="packBody">
+                                        <p>501-900 <span data-translate="employees">employees</span></p>
+                                        <ul>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="wizard">Wizard</span></li>
+                                            <li><img src="./assets/done.svg"
+                                                    alt="done"><span data-translate="self_editing">Self-editing</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="packContact">
+                <p>900+ <span data-translate="employees">employees</span></p>
+                <a href="index.html#newsletter"><button data-translate="li3">Contact
+                        us</button></a>
+            </div>
         </div>
-    </div>
-    </div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    </div>
-    </div>
-    <div class="packContact">
-        <p>500+ <span data-translate="employees">employees</span></p>
-        <a href="index.html#newsletter"><button data-translate="li3">Contact us</button></a>
-    </div>
-    </div>
 
-    <div class="footer">
-        <div class="left">
-          <h1 data-translate="heading1">Ready and easy to use performance management solutions</h1>
-          <p data-translate="text1">
-            Hirpo enables you to easily automate 70% of the solution process
-            through the information available in the database. With Hirpo, you can
-            effectively carry out the performance evaluation process of your
-            employees.
-          </p>
-          <div class="footer-buttonGroups">
-            <a href="https://app.hirpo.net/signup">
-              <button class="footer-start" data-translate="get_started">Get started</button>
-            </a>
-            <a href="https://app.hirpo.net/">
-              <button class="footer-login" data-translate="login">Login</button>
-            </a>
-          </div>
+        <div class="footer">
+            <div class="left">
+                <h1 data-translate="heading1">Ready and easy
+                    to use performance management
+                    solutions</h1>
+                <p data-translate="text1">
+                    Hirpo enables you to easily automate 70%
+                    of the solution process
+                    through the information available in the
+                    database. With Hirpo, you can
+                    effectively carry out the performance
+                    evaluation process of your
+                    employees.
+                </p>
+                <div class="footer-buttonGroups">
+                    <a href="https://app.hirpo.net/signup">
+                        <button class="footer-start"
+                            data-translate="get_started">Get
+                            started</button>
+                    </a>
+                    <a href="https://app.hirpo.net/">
+                        <button class="footer-login"
+                            data-translate="login">Login</button>
+                    </a>
+                </div>
+            </div>
+            <div class="bluegrad"></div>
+            <div class="right">
+                <div class="footer-right-content">
+                    <img src="./assets/footerLogo.svg"
+                        alt="footerlogo" />
+                    <ul>
+                        <li>
+                            <a href="aboutus.html"
+                                data-translate="li1">About
+                                Hirpo</a>
+                        </li>
+                        <li>
+                            <a href="package.html"
+                                data-translate="li2">Pricing
+                                & Bills</a>
+                        </li>
+                        <li><a href="contact.html"
+                                data-translate="li3">Contact
+                                us</a></li>
+                        <li>
+                            <a href="privacy-policy.html"
+                                data-translate="li5">Privacy
+                                Policy</a>
+                        </li>
+                    </ul>
+                    <hr />
+                    <p>Hirpo 2024</p>
+                </div>
+            </div>
+            <div class="redgrad"></div>
         </div>
-        <div class="bluegrad"></div>
-        <div class="right">
-	<div class="footer-right-content">
-		<img src="./assets/footerLogo.svg" alt="footerlogo" />
-		<ul>
-			<li>
-				<a href="aboutus.html" data-translate="li1">About Hirpo</a>
-			</li>
-			<li>
-				<a href="package.html" data-translate="li2">Pricing & Bills</a>
-			</li>
-			<li><a href="contact.html" data-translate="li3">Contact us</a></li>
-			<li>
-				<a href="privacy-policy.html" data-translate="li5">Privacy Policy</a>
-			</li>
-		</ul>
-		<hr />
-		<p>Hirpo 2024</p>
-	</div>
-</div>
-        <div class="redgrad"></div>
-      </div>
-    <script src="./lang.js"></script>
-    <script src="./script.js"></script>
+        <script src="./lang.js"></script>
+        <script src="./script.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 4,
-            spaceBetween: 10,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-                "0":{
-                    slidesPerView: 1,
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 4,
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
                 },
-                "600": {
-                    slidesPerView: 2,
+                breakpoints: {
+                    "0": {
+                        slidesPerView: 1,
+                    },
+                    "600": {
+                        slidesPerView: 2,
+                    },
+                    "768": {
+                        slidesPerView: 3,
+                    },
+                    "1100": {
+                        slidesPerView: 4,
+                    },
                 },
-                "768": {
-                    slidesPerView: 3,
-                },
-                "1100": {
-                    slidesPerView: 4,
-                },
-            },
-        });
-    </script>
-</body>
+            });
+        </script>
+    </body>
 
 </html>
