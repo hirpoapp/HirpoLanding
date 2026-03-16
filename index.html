@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta name="mailru-domain" content="ydcCKpo8ji54OJ89" />
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hirpo</title>
-		<link rel="stylesheet" href="style.css" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hirpo — AI HR Operating System</title>
+<link rel="shortcut icon" href="./assets/navLogo.svg" type="image/x-icon">
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 		/>
-		<link
-			rel="stylesheet"
-			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-			crossorigin="anonymous"
-		/>
-		<link rel="icon" href="./assets/navLogo.svg" />
-
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@700;800;900&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
 		<script
 			type="text/javascript"
 			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
@@ -27,308 +20,641 @@
 				emailjs.init("DzO4hPts8d7ZxPryV");
 			})();
 		</script>
-	</head>
+<body>
 
-	<body>
-		<nav class="nav">
-			<a class="nav-logoGroups" href="/">
-				<img src="./assets/navLogo.svg" alt="" />
-				<h2>Hirpo</h2>
-			</a>
-			<div class="menu">
-				<ul class="nav-itemGroups">
-					<li onclick="hamburgerOpen()">
-						<a href="aboutus.html" data-translate="li1">About Hirpo</a>
-					</li>
-					<li onclick="hamburgerOpen()">
-						<a href="package.html" data-translate="li2">Pricing & Bills</a>
-					</li>
-					<li onclick="hamburgerOpen()">
-						<a href="contact.html" data-translate="li3">Contact Us</a>
-					</li>
-					<li onclick="hamburgerOpen()">
-						<a href="https://wa.me/+994702945070" data-translate="li4"
-							>Request Demo</a
-						>
-					</li>
-				</ul>
-				<select name="lang" id="lang" onchange="translatePage(this)">
-					<option selected value="en">EN</option>
-					<option value="az">AZ</option>
-					<option value="ru">RU</option>
-				</select>
-				<div class="nav-buttonGroups">
-					<a href="https://app.hirpo.net/">
-						<button class="nav-login" data-translate="login">Login</button>
-					</a>
-					<a href="https://app.hirpo.net/signup">
-						<button class="nav-start" data-translate="get_started">
-							Get started
-						</button>
-					</a>
-				</div>
-			</div>
-			<div class="hamburger" onclick="hamburgerOpen()">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
-			</div>
-		</nav>
+<!-- ═══ PRICE REQUEST MODAL ═══ -->
+<div class="modal-overlay" id="priceModal" onclick="handleModalOverlayClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-icon">💬</div>
+    <div class="modal-title" id="modalTitle">Request Pricing</div>
+    <div class="modal-module-tag" id="modalTag">Module</div>
+    <p class="modal-sub" id="modalSub">Share your details and we'll send the pricing information directly to your corporate email.</p>
 
-		<section id="home" class="home">
-			<div class="home-left">
-				<div class="home-content">
-					<h1 data-translate="heading1">
-						<span class="ready"
-							><img src="./assets/bluecircle.png" alt="bluecircle" />
-							Ready</span
-						>
-						and
-						<span class="easy"
-							><img src="./assets/easyline.png" alt="pinkline" />easy</span
-						>
-						to use performance management solutions
-					</h1>
-					<p data-translate="text1">
-						Hirpo enables you to easily automate 70% of the solution process
-						through the information available in the database. With Hirpo, you
-						can effectively carry out the performance evaluation process of your
-						employees.
-					</p>
-					<a href="https://app.hirpo.net/signup">
-						<button data-translate="get_started">Get started</button>
-					</a>
-				</div>
-			</div>
-			<div class="home-right">
-				<img src="assets/dashboard.png" alt="" />
-			</div>
-			<div class="bluegrad"></div>
-			<div class="redgrad"></div>
-		</section>
-		<section class="iframe">
-			<iframe
-				width="80%"
-				height="500px"
-				src="https://www.youtube.com/embed/n9rWuZJcz3Q?si=G2XcQaU1qdUtVpd1"
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
-				allowfullscreen
-			></iframe>
-		</section>
-		<section class="secondsection">
-			<div class="redgrad"></div>
-			<div class="secondsection-content">
-				<h1 data-translate="text2">
-					Save time on performance evaluations that would typically take months.
-					We can handle it for you in just
-				</h1>
-				<h2 data-translate="text3">3 hours</h2>
-				<p data-translate="text4">
-					Hirpo's proposed impact allows you to save time through automated
-					solutions. We can efficiently handle these time-consuming stages that
-					would typically take months using our accumulated data, completing
-					them in a very short time.
-				</p>
+    <div id="modalForm">
+      <div class="modal-field">
+        <label id="labelCompany">Company Name</label>
+        <input type="text" id="inputCompany" placeholder="Acme Corporation" />
+      </div>
+      <div class="modal-field">
+        <label id="labelEmail">Corporate Email</label>
+        <input type="email" id="inputEmail" placeholder="you@company.com" />
+      </div>
+      <button class="modal-submit" id="modalSubmitBtn" onclick="submitPriceRequest()">
+        <span id="submitBtnText">Send Pricing Request</span>
+      </button>
+      <p class="modal-note" id="modalNote">We'll respond within 1 business day. No spam, ever.</p>
+    </div>
 
-				<div class="secondsection-content-icons">
-					<div>
-						<img src="./assets/timesave.svg" alt="" />
-						<p data-translate="icon1">Time saving</p>
-					</div>
-					<div>
-						<img src="./assets/userFriendly.svg" alt="" />
-						<p data-translate="icon2">User friendly</p>
-					</div>
-					<div>
-						<img src="./assets/secure.svg" alt="" />
-						<p data-translate="icon3">Secure</p>
-					</div>
-				</div>
-				<button
-					data-translate="li4"
-					style="
-						background-color: #3778b8;
-						color: white;
-						border: none;
-						padding: 15px 20px;
-						border-radius: 5px;
-						cursor: pointer;
-						font-size: 1.2rem;
-						margin-top: 20px;
-					"
-					onclick="window.location.href = 'https://wa.me/+994702945070'"
-				>
-					Request a Demo
-				</button>
-			</div>
-		</section>
+    <div class="modal-success" id="modalSuccess">
+      <div class="modal-success-icon">✓</div>
+      <div class="modal-success-title" id="successTitle">Request Sent!</div>
+      <p class="modal-success-sub" id="successSub">Thank you! We've received your request and will send pricing details to your email within 1 business day.</p>
+    </div>
+  </div>
+</div>
 
-		<section class="stepsSection">
-			<div class="step stepOne">
-				<div class="left">
-					<img class="stepimg" src="./assets/signup.png" alt="signup" />
-				</div>
-				<div class="right step-content">
-					<h1 data-translate="heading2">Ready to see how it works?</h1>
-					<div>
-						<img src="./assets/1.svg" alt="" />
-						<p data-translate="text5">
-							First, go through the registration process for <span>Hirpo</span>
-						</p>
-					</div>
-				</div>
-				<div class="bluegrad"></div>
-			</div>
+<!-- ═══ VIDEO MODAL ═══ -->
+<div class="video-modal-overlay" id="videoModal" onclick="handleVideoModalClick(event)">
+  <div class="video-modal-box">
+    <button class="modal-close" onclick="closeVideoModal()">✕</button>
+    <iframe id="videoIframe" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
 
-			<div class="step stepTwo">
-				<div class="left step-content">
-					<div>
-						<img src="./assets/2.svg" alt="" />
-						<p data-translate="text6">
-							Proceed to the
-							<span><img src="./assets/bluecircle.png" alt="" />Wizard </span>
-						</p>
-					</div>
-					<p class="wizardOne" data-translate="text7">
-						Simply answer
-						<span><img src="./assets/pinkline.png" alt="" />3 questions </span>
-					</p>
-					<p data-translate="text18" class="wizardTwo">
-						Start the <span>magic</span> in a short time
-					</p>
-				</div>
-				<div class="right">
-					<img class="stepimg" src="./assets/wizard.png" alt="signup" />
-				</div>
-				<div class="bluegrad"></div>
-			</div>
-		</section>
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon" style="background:linear-gradient(135deg,#1a6ef5,#7c4ddf);font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:15px;letter-spacing:-0.02em;">H</div>
+    Hirpo
+  </a>
+  <ul class="nav-links">
+    <li><a href="#platform" data-i18n="nav_platform"></a></li>
+    <li><a href="#modules" data-i18n="nav_modules"></a></li>
+    <li><a href="#approach" data-i18n="nav_approach"></a></li>
+    <li><a href="#contact" data-i18n="nav_contact"></a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('az')">AZ</button>
+    </div>
+    <a href="#" class="btn-ghost" data-i18n="nav_login"></a>
+    <a href="https://wa.me/+994702945070" class="btn-primary" data-i18n="nav_demo"></a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-		<section id="customers">
-			<h1 data-translate="customers">Customers</h1>
-			<div class="swiper mySwiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<img src="./assets/customers/focus.png" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="./assets/customers/ghg.jpeg" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="./assets/customers/hroption.png" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="./assets/customers/mergen.png" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="./assets/customers/sundance.jpg" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="./assets/customers/unec.png" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="./assets/customers/zirve.png" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="./assets/customers/bmc.png" alt="" />
-					</div>
-				</div>
-			</div>
-		</section>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#platform" data-i18n="nav_platform" onclick="closeMenu()"></a>
+  <a href="#modules" data-i18n="nav_modules" onclick="closeMenu()"></a>
+  <a href="#approach" data-i18n="nav_approach" onclick="closeMenu()"></a>
+  <a href="#contact" data-i18n="nav_contact" onclick="closeMenu()"></a>
+  <div class="mobile-menu-actions">
+    <a href="#" class="btn-ghost" data-i18n="nav_login"></a>
+    <a href="https://wa.me/+994702945070" class="btn-primary" data-i18n="nav_demo"></a>
+  </div>
+</div>
 
-		<section id="newsletter" class="newsletter">
-			<div class="redgrad"></div>
-			<div class="newsletter-content">
-				<h3 data-translate="heading3">Do you have a question?</h3>
-				<div id="contact-form">
-					<div class="field">
-						<label for="name" data-translate="label1">Name</label>
-						<input
-							type="text"
-							name="from_name"
-							id="name"
-							placeholder="Enter your name"
-							required
-						/>
-					</div>
-					<div class="field">
-						<label for="email" data-translate="label2">Email</label>
-						<input
-							type="email"
-							name="email"
-							id="email"
-							placeholder="Enter your email"
-							required
-						/>
-					</div>
-					<div class="field">
-						<textarea
-							name="message"
-							id="message"
-							rows="7"
-							placeholder="Write your question"
-							required
-						></textarea>
-					</div>
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="glow-1"></div><div class="glow-2"></div><div class="glow-3"></div>
 
-					<button id="sendButton" onclick="sendMail()">
-						<img src="./assets/sent.svg" alt="" />
-						<span data-translate="send">Send</span>
-					</button>
-				</div>
-			</div>
-		</section>
+  <div class="badge">
+    <span class="badge-dot"></span>
+    <span data-i18n="hero_badge"></span>
+  </div>
 
-		<div class="footer">
-			<div class="left">
-				<h1 data-translate="heading1">
-					Ready and easy to use performance management solutions
-				</h1>
-				<p data-translate="text1">
-					Hirpo enables you to easily automate 70% of the solution process
-					through the information available in the database. With Hirpo, you can
-					effectively carry out the performance evaluation process of your
-					employees.
-				</p>
-				<div class="footer-buttonGroups">
-					<a href="https://app.hirpo.net/signup">
-						<button class="footer-start" data-translate="get_started">
-							Get started
-						</button>
-					</a>
-					<a href="https://app.hirpo.net/">
-						<button class="footer-login" data-translate="login">Login</button>
-					</a>
-				</div>
-			</div>
+  <h1>
+    <span data-i18n="hero_h1_line1"></span><br>
+    <span class="gradient-text" data-i18n="hero_h1_line2"></span>
+  </h1>
 
-			<div class="bluegrad"></div>
-			<div class="right">
-				<div class="footer-right-content">
-					<img src="./assets/footerLogo.svg" alt="footerlogo" />
-					<ul>
-						<li>
-							<a href="aboutus.html" data-translate="li1">About Hirpo</a>
-						</li>
-						<li>
-							<a href="package.html" data-translate="li2">Pricing & Bills</a>
-						</li>
-						<li><a href="contact.html" data-translate="li3">Contact us</a></li>
-						<li><a href="privacy-policy.html" data-translate="li5">Privacy Policy</a></li>
-					</ul>
-					<hr />
-					<p>Hirpo 2024</p>
-				</div>
-			</div>
-			<div class="redgrad"></div>
-		</div>
+  <p class="hero-sub" data-i18n="hero_sub"></p>
 
-		<script src="lang.js"></script>
-		<script src="script.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <div class="hero-actions">
+    <a href="https://wa.me/+994702945070" class="btn-primary btn-large" data-i18n="hero_cta"></a>
+    <button class="btn-demo" onclick="openVideoModal()">
+      <span class="play-icon">▶</span>
+      <span data-i18n="hero_watch"></span>
+    </button>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">7</div>
+      <div class="stat-label" data-i18n="stat1"></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">1</div>
+      <div class="stat-label" data-i18n="stat2"></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">AI</div>
+      <div class="stat-label" data-i18n="stat3"></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">∞</div>
+      <div class="stat-label" data-i18n="stat4"></div>
+    </div>
+  </div>
+
+  <!-- Dashboard preview -->
+  <div class="hero-visual">
+    <div class="dashboard-frame">
+      <div class="dashboard-titlebar">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="db-title">Hirpo — HR Operating System</span>
+      </div>
+      <div class="dashboard-body">
+        <div class="db-sidebar">
+          <div class="db-logo">
+            <div class="db-logo-icon" style="font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:12px;">H</div>
+            <span class="db-logo-text">Hirpo</span>
+          </div>
+          <div class="db-section-label" data-i18n="db_overview"></div>
+          <div class="db-item active"><span class="db-item-icon">⊞</span> Dashboard</div>
+          <div class="db-section-label" data-i18n="db_modules"></div>
+          <div class="db-item"><span class="db-item-icon">🔬</span> <span data-i18n="mod_diagnostics"></span></div>
+          <div class="db-item"><span class="db-item-icon">🏢</span> <span data-i18n="mod_corehr"></span></div>
+          <div class="db-item"><span class="db-item-icon">👥</span> <span data-i18n="mod_recruitment"></span></div>
+          <div class="db-item"><span class="db-item-icon">📊</span> <span data-i18n="mod_performance"></span></div>
+          <div class="db-item"><span class="db-item-icon">📚</span> <span data-i18n="mod_lms"></span></div>
+          <div class="db-item"><span class="db-item-icon">💬</span> <span data-i18n="mod_surveys"></span></div>
+          <div class="db-item"><span class="db-item-icon">🤖</span> <span data-i18n="mod_ai"></span></div>
+          <div class="db-section-label" data-i18n="db_reports"></div>
+          <div class="db-item"><span class="db-item-icon">📋</span> Analytics</div>
+        </div>
+        <div class="db-main">
+          <div class="db-header">
+            <div>
+              <div class="db-page-title">Dashboard</div>
+              <div class="db-date">Mar 11, 2026 · <span style="color:var(--green)">●</span> <span data-i18n="db_live"></span></div>
+            </div>
+            <div class="ai-badge">✦ <span data-i18n="db_ai_ready"></span></div>
+          </div>
+          <div class="db-cards">
+            <div class="db-card">
+              <div class="db-card-label" data-i18n="db_headcount"></div>
+              <div class="db-card-value">247</div>
+              <div class="db-card-sub" data-i18n="db_headcount_sub"></div>
+            </div>
+            <div class="db-card">
+              <div class="db-card-label" data-i18n="db_openroles"></div>
+              <div class="db-card-value">18</div>
+              <div class="db-card-sub" data-i18n="db_openroles_sub"></div>
+            </div>
+            <div class="db-card">
+              <div class="db-card-label" data-i18n="db_performance"></div>
+              <div class="db-card-value">84%</div>
+              <div class="db-card-sub" data-i18n="db_performance_sub"></div>
+            </div>
+            <div class="db-card">
+              <div class="db-card-label">eNPS</div>
+              <div class="db-card-value">+61</div>
+              <div class="db-card-sub" data-i18n="db_enps_sub"></div>
+            </div>
+          </div>
+          <div class="db-bottom">
+            <div class="db-widget">
+              <div class="db-widget-title" data-i18n="db_top_perf"></div>
+              <div class="db-list-item"><div class="db-avatar" style="background:#1a6ef5">SJ</div><span class="db-name">Sarah Johnson</span><span class="db-score">98pt</span></div>
+              <div class="db-list-item"><div class="db-avatar" style="background:#8b5cf6">MC</div><span class="db-name">Michael Chen</span><span class="db-score">95pt</span></div>
+              <div class="db-list-item"><div class="db-avatar" style="background:#22c55e">LD</div><span class="db-name">Laura Davis</span><span class="db-score">92pt</span></div>
+            </div>
+            <div class="db-widget">
+              <div class="db-widget-title" data-i18n="db_ai_activity"></div>
+              <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px;" data-i18n="db_this_week"></div>
+              <div style="margin-bottom:8px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span data-i18n="db_cv_screen"></span><span style="color:var(--blue-light)">142</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+              <div style="margin-bottom:8px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span data-i18n="db_queries"></span><span style="color:var(--blue-light)">89</span></div><div class="progress-bar"><div class="progress-fill" style="width:65%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span data-i18n="db_reminders"></span><span style="color:var(--blue-light)">34</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE STRIP -->
+<div class="value-strip">
+  <div class="value-item"><div class="value-item-icon">🏢</div><span><strong data-i18n="val1_bold"></strong> — <span data-i18n="val1_rest"></span></span></div>
+  <div class="value-item"><div class="value-item-icon">✦</div><span><strong data-i18n="val2_bold"></strong> — <span data-i18n="val2_rest"></span></span></div>
+  <div class="value-item"><div class="value-item-icon">👩‍💼</div><span><strong data-i18n="val3_bold"></strong> — <span data-i18n="val3_rest"></span></span></div>
+  <div class="value-item"><div class="value-item-icon">🔗</div><span><strong data-i18n="val4_bold"></strong> — <span data-i18n="val4_rest"></span></span></div>
+</div>
+
+<!-- ═══ WHAT IS HIRPO ═══ -->
+<section id="platform" class="what-section">
+  <div class="reveal">
+    <div class="section-eyebrow" data-i18n="what_eyebrow"></div>
+    <h2 class="section-title" data-i18n="what_title"></h2>
+    <p class="section-sub" data-i18n="what_sub"></p>
+  </div>
+  <div class="what-grid">
+    <div class="reveal">
+      <div class="pillar">
+        <div class="pillar-icon" style="background:rgba(26,110,245,0.12);border:1px solid rgba(26,110,245,0.2);">🏗️</div>
+        <div><div class="pillar-title" data-i18n="pillar1_title"></div><p class="pillar-desc" data-i18n="pillar1_desc"></p></div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon" style="background:rgba(139,92,246,0.12);border:1px solid rgba(139,92,246,0.2);">✦</div>
+        <div><div class="pillar-title" data-i18n="pillar2_title"></div><p class="pillar-desc" data-i18n="pillar2_desc"></p></div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon" style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.18);">🤖</div>
+        <div><div class="pillar-title" data-i18n="pillar3_title"></div><p class="pillar-desc" data-i18n="pillar3_desc"></p></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="os-ring">
+        <div class="os-ring-top">
+          <div><div class="os-ring-label">Hirpo OS</div><div style="font-size:15px;font-weight:600;margin-top:4px;" data-i18n="os_subtitle"></div></div>
+          <div class="os-chip">✦ <span data-i18n="os_chip"></span></div>
+        </div>
+        <div class="os-modules" style="grid-template-columns:1fr 1fr 1fr;">
+          <div class="os-mod" style="border-color:rgba(124,77,223,0.25);background:rgba(124,77,223,0.05);"><span>🔬</span><span data-i18n="mod_diagnostics"></span></div>
+          <div class="os-mod"><span>🏢</span><span data-i18n="mod_corehr"></span></div>
+          <div class="os-mod"><span>👥</span><span data-i18n="mod_recruitment"></span></div>
+          <div class="os-mod"><span>📊</span><span data-i18n="mod_performance"></span></div>
+          <div class="os-mod"><span>📚</span><span data-i18n="mod_lms"></span></div>
+          <div class="os-mod"><span>💬</span><span data-i18n="mod_surveys"></span></div>
+          <div class="os-mod"><span>🤖</span><span data-i18n="mod_ai"></span></div>
+        </div>
+        <div class="os-bottom">
+          <div class="os-layer os-layer-ai" data-i18n="os_layer_ai"></div>
+          <div class="os-layer os-layer-data" data-i18n="os_layer_data"></div>
+          <div class="os-layer os-layer-people" data-i18n="os_layer_people"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULES ═══ -->
+<section id="modules" style="padding:100px 60px;background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal">
+      <div class="section-eyebrow" data-i18n="modules_eyebrow"></div>
+      <h2 class="section-title" data-i18n="modules_title"></h2>
+      <p class="section-sub" data-i18n="modules_sub"></p>
+    </div>
+    <div style="margin-top:48px;" class="reveal">
+      <div class="modules-tabs">
+        <button class="tab-btn active" onclick="switchTab(this,'diagnostics')" data-i18n="mod_diagnostics"></button>
+        <button class="tab-btn" onclick="switchTab(this,'corehr')" data-i18n="mod_corehr"></button>
+        <button class="tab-btn" onclick="switchTab(this,'recruitment')" data-i18n="mod_recruitment"></button>
+        <button class="tab-btn" onclick="switchTab(this,'performance')" data-i18n="mod_performance"></button>
+        <button class="tab-btn" onclick="switchTab(this,'lms')" data-i18n="mod_lms"></button>
+        <button class="tab-btn" onclick="switchTab(this,'surveys')" data-i18n="mod_surveys"></button>
+        <button class="tab-btn" onclick="switchTab(this,'ai')" data-i18n="mod_ai"></button>
+      </div>
+
+      <!-- DIAGNOSTICS -->
+      <div id="tab-diagnostics" class="tab-panel active">
+        <div>
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--purple);margin-bottom:12px;" data-i18n="diag_eyebrow"></div>
+          <div class="module-detail-title" data-i18n="diag_title"></div>
+          <p class="module-detail-desc" data-i18n="diag_desc"></p>
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="diag_f1"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="diag_f2"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="diag_f3"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="diag_f4"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="diag_f5"></span></li>
+          </ul>
+          <div class="module-value-pills" id="pills-diagnostics">
+          <div class="value-pill"><div class="value-pill-icon">🗺️</div><div class="value-pill-text"><strong>Your HR roadmap in minutes</strong></div><span class="value-pill-badge badge-save">Save $10K+</span></div>
+          <div class="value-pill"><div class="value-pill-icon">🔍</div><div class="value-pill-text"><strong>Pinpoint exactly what is broken</strong></div><span class="value-pill-badge badge-ai">AI-powered</span></div>
+          <div class="value-pill"><div class="value-pill-icon">📈</div><div class="value-pill-text"><strong>See ROI before you invest</strong></div><span class="value-pill-badge badge-smart">Data-driven</span></div>
+          </div>
+          <button class="ask-price-btn" onclick="openModal('diagnostics', 'mod_diagnostics', '🔬')">
+            💰 <span data-i18n="ask_price"></span>
+          </button>
+        </div>
+        <div class="module-screen">
+          <div class="module-screen-bar"><div class="ms-dot" style="background:#ff5f57"></div><div class="ms-dot" style="background:#febc2e"></div><div class="ms-dot" style="background:#28c840"></div><span style="font-size:12px;color:var(--text-muted);margin-left:8px;" data-i18n="diag_screen_title"></span></div>
+          <!-- Maturity radar -->
+          <div style="margin-bottom:14px;">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">HR Maturity Score</div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span>Recruitment</span><span style="color:var(--blue)">72%</span></div><div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span>Performance Mgmt</span><span style="color:var(--blue)">45%</span></div><div class="progress-bar"><div class="progress-fill" style="width:45%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span>Learning & Dev</span><span style="color:var(--blue)">30%</span></div><div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span>Employee Experience</span><span style="color:var(--blue)">58%</span></div><div class="progress-bar"><div class="progress-fill" style="width:58%"></div></div></div>
+            </div>
+          </div>
+          <div style="padding:12px;background:rgba(124,77,223,0.07);border:1px solid rgba(124,77,223,0.2);border-radius:8px;">
+            <div style="font-size:11px;color:var(--purple);margin-bottom:8px;font-weight:600;">✦ AI Roadmap — Next 90 Days</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;"><span style="width:6px;height:6px;border-radius:50%;background:#ef4444;flex-shrink:0;"></span><span>Set up Performance review cycles</span></div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;"><span style="width:6px;height:6px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></span><span>Launch onboarding LMS program</span></div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;"><span style="width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span><span>Run first pulse survey</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CORE HR -->
+      <div id="tab-corehr" class="tab-panel">
+        <div>
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-light);margin-bottom:12px;" data-i18n="mod_corehr"></div>
+          <div class="module-detail-title" data-i18n="corehr_title"></div>
+          <p class="module-detail-desc" data-i18n="corehr_desc"></p>
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="corehr_f1"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="corehr_f2"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="corehr_f3"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="corehr_f4"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="corehr_f5"></span></li>
+          </ul>
+          <div class="module-value-pills" id="pills-corehr">
+          <div class="value-pill"><div class="value-pill-icon">📂</div><div class="value-pill-text"><strong>One place for everything employee</strong></div><span class="value-pill-badge badge-fast">Instant access</span></div>
+          <div class="value-pill"><div class="value-pill-icon">⚖️</div><div class="value-pill-text"><strong>Stay compliant without the stress</strong></div><span class="value-pill-badge badge-smart">Compliance-ready</span></div>
+          <div class="value-pill"><div class="value-pill-icon">🔗</div><div class="value-pill-text"><strong>Payroll sync, zero manual work</strong></div><span class="value-pill-badge badge-save">Error-free</span></div>
+          </div>
+          <button class="ask-price-btn" onclick="openModal('corehr', 'mod_corehr', '🏢')">
+            💰 <span data-i18n="ask_price"></span>
+          </button>
+        </div>
+        <div class="module-screen">
+          <div class="module-screen-bar"><div class="ms-dot" style="background:#ff5f57"></div><div class="ms-dot" style="background:#febc2e"></div><div class="ms-dot" style="background:#28c840"></div><span style="font-size:12px;color:var(--text-muted);margin-left:8px;" data-i18n="corehr_screen_title"></span></div>
+          <div style="display:flex;align-items:center;gap:14px;padding:14px;background:var(--dark3);border-radius:10px;margin-bottom:12px;">
+            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#1a6ef5,#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:700;">SJ</div>
+            <div><div style="font-weight:600;font-size:14px;">Sarah Johnson</div><div style="font-size:12px;color:var(--text-muted);">Product Manager · Engineering</div></div>
+            <div style="margin-left:auto;"><span style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);padding:3px 10px;border-radius:100px;font-size:11px;color:#86efac;" data-i18n="status_active"></span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="padding:10px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;" data-i18n="label_contract"></div><div style="font-size:13px;" data-i18n="val_contract"></div></div>
+            <div style="padding:10px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;" data-i18n="label_leave"></div><div style="font-size:13px;" data-i18n="val_leave"></div></div>
+            <div style="padding:10px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;" data-i18n="label_startdate"></div><div style="font-size:13px;">March 15, 2022</div></div>
+            <div style="padding:10px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;" data-i18n="label_docs"></div><div style="font-size:13px;" data-i18n="val_docs"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECRUITMENT -->
+      <div id="tab-recruitment" class="tab-panel">
+        <div>
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-light);margin-bottom:12px;" data-i18n="mod_recruitment"></div>
+          <div class="module-detail-title" data-i18n="rec_title"></div>
+          <p class="module-detail-desc" data-i18n="rec_desc"></p>
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="rec_f1"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="rec_f2"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="rec_f3"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="rec_f4"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="rec_f5"></span></li>
+          </ul>
+          <div class="module-value-pills" id="pills-recruitment">
+          <div class="value-pill"><div class="value-pill-icon">🤖</div><div class="value-pill-text"><strong>AI screens 100 CVs in seconds</strong></div><span class="value-pill-badge badge-ai">AI-powered</span></div>
+          <div class="value-pill"><div class="value-pill-icon">⚡</div><div class="value-pill-text"><strong>Cut time-to-hire by 3×</strong></div><span class="value-pill-badge badge-fast">3× faster</span></div>
+          <div class="value-pill"><div class="value-pill-icon">🎯</div><div class="value-pill-text"><strong>Built for great candidate experience</strong></div><span class="value-pill-badge badge-smart">Top UX</span></div>
+          </div>
+          <button class="ask-price-btn" onclick="openModal('recruitment', 'mod_recruitment', '👥')">
+            💰 <span data-i18n="ask_price"></span>
+          </button>
+        </div>
+        <div class="module-screen">
+          <div class="module-screen-bar"><div class="ms-dot" style="background:#ff5f57"></div><div class="ms-dot" style="background:#febc2e"></div><div class="ms-dot" style="background:#28c840"></div><span style="font-size:12px;color:var(--text-muted);margin-left:8px;" data-i18n="rec_screen_title"></span></div>
+          <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;">
+            <div style="min-width:110px;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:8px;font-weight:500;" data-i18n="rec_applied"></div>
+              <div style="background:var(--dark3);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px;margin-bottom:6px;">Alex R.<div style="font-size:11px;color:var(--text-muted);">UX Designer</div></div>
+              <div style="background:var(--dark3);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px;">Kim L.<div style="font-size:11px;color:var(--text-muted);">UX Designer</div></div>
+            </div>
+            <div style="min-width:110px;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--blue-light);margin-bottom:8px;font-weight:500;" data-i18n="rec_screened"></div>
+              <div style="background:var(--dark3);border:1px solid rgba(26,110,245,0.2);border-radius:8px;padding:10px;font-size:12px;">Tom H.<div style="font-size:11px;color:var(--blue-light);">✦ AI match 94%</div></div>
+            </div>
+            <div style="min-width:110px;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#86efac;margin-bottom:8px;font-weight:500;" data-i18n="rec_interview"></div>
+              <div style="background:var(--dark3);border:1px solid rgba(34,197,94,0.15);border-radius:8px;padding:10px;font-size:12px;">Dana M.<div style="font-size:11px;color:#86efac;" data-i18n="rec_today"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERFORMANCE -->
+      <div id="tab-performance" class="tab-panel">
+        <div>
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-light);margin-bottom:12px;" data-i18n="mod_performance"></div>
+          <div class="module-detail-title" data-i18n="perf_title"></div>
+          <p class="module-detail-desc" data-i18n="perf_desc"></p>
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="perf_f1"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="perf_f2"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="perf_f3"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="perf_f4"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="perf_f5"></span></li>
+          </ul>
+          <div class="module-value-pills" id="pills-performance">
+          <div class="value-pill"><div class="value-pill-icon">🚀</div><div class="value-pill-text"><strong>Live in days, not months</strong></div><span class="value-pill-badge badge-fast">Quick to launch</span></div>
+          <div class="value-pill"><div class="value-pill-icon">💬</div><div class="value-pill-text"><strong>Feedback that actually happens</strong></div><span class="value-pill-badge badge-smart">Higher completion</span></div>
+          <div class="value-pill"><div class="value-pill-icon">✦</div><div class="value-pill-text"><strong>AI writes the first draft for you</strong></div><span class="value-pill-badge badge-ai">AI-assisted</span></div>
+          </div>
+          <button class="ask-price-btn" onclick="openModal('performance', 'mod_performance', '📊')">
+            💰 <span data-i18n="ask_price"></span>
+          </button>
+        </div>
+        <div class="module-screen">
+          <div class="module-screen-bar"><div class="ms-dot" style="background:#ff5f57"></div><div class="ms-dot" style="background:#febc2e"></div><div class="ms-dot" style="background:#28c840"></div><span style="font-size:12px;color:var(--text-muted);margin-left:8px;" data-i18n="perf_screen_title"></span></div>
+          <div style="margin-bottom:12px;"><div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;" data-i18n="perf_okr_label"></div>
+            <div style="margin-bottom:8px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span data-i18n="perf_okr1"></span><span style="color:var(--green)">100%</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+            <div style="margin-bottom:8px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span data-i18n="perf_okr2"></span><span style="color:var(--blue-light)">78%</span></div><div class="progress-bar"><div class="progress-fill" style="width:78%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span data-i18n="perf_okr3"></span><span style="color:var(--text-muted)">45%</span></div><div class="progress-bar"><div class="progress-fill" style="width:45%"></div></div></div>
+          </div>
+          <div style="padding:10px 12px;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.2);border-radius:8px;"><div style="font-size:11px;color:var(--purple-light);margin-bottom:4px;">✦ AI Summary</div><div style="font-size:12px;color:var(--text-muted);" data-i18n="perf_ai_summary"></div></div>
+        </div>
+      </div>
+
+      <!-- LMS -->
+      <div id="tab-lms" class="tab-panel">
+        <div>
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-light);margin-bottom:12px;" data-i18n="lms_full_name"></div>
+          <div class="module-detail-title" data-i18n="lms_title"></div>
+          <p class="module-detail-desc" data-i18n="lms_desc"></p>
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="lms_f1"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="lms_f2"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="lms_f3"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="lms_f4"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="lms_f5"></span></li>
+          </ul>
+          <div class="module-value-pills" id="pills-lms">
+          <div class="value-pill"><div class="value-pill-icon">📚</div><div class="value-pill-text"><strong>Onboarding on autopilot</strong></div><span class="value-pill-badge badge-fast">Automated</span></div>
+          <div class="value-pill"><div class="value-pill-icon">🎯</div><div class="value-pill-text"><strong>Learning tied to real goals</strong></div><span class="value-pill-badge badge-smart">Goal-linked</span></div>
+          <div class="value-pill"><div class="value-pill-icon">📊</div><div class="value-pill-text"><strong>Know who is actually learning</strong></div><span class="value-pill-badge badge-ai">Actionable data</span></div>
+          </div>
+          <button class="ask-price-btn" onclick="openModal('lms', 'mod_lms', '📚')">
+            💰 <span data-i18n="ask_price"></span>
+          </button>
+        </div>
+        <div class="module-screen">
+          <div class="module-screen-bar"><div class="ms-dot" style="background:#ff5f57"></div><div class="ms-dot" style="background:#febc2e"></div><div class="ms-dot" style="background:#28c840"></div><span style="font-size:12px;color:var(--text-muted);margin-left:8px;" data-i18n="lms_screen_title"></span></div>
+          <div style="display:flex;gap:8px;margin-bottom:12px;">
+            <div style="flex:1;padding:12px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);text-align:center;"><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;">91%</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;" data-i18n="lms_completion"></div></div>
+            <div style="flex:1;padding:12px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);text-align:center;"><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;">24</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;" data-i18n="lms_active"></div></div>
+            <div style="flex:1;padding:12px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);text-align:center;"><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;">7</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;" data-i18n="lms_due"></div></div>
+          </div>
+          <div style="background:var(--dark3);border:1px solid var(--border);border-radius:8px;padding:12px;"><div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;" data-i18n="lms_in_progress"></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border);"><span style="font-size:16px;">🔐</span><div style="flex:1;"><div style="font-size:12px;" data-i18n="lms_course1"></div><div class="progress-bar" style="margin-top:4px;"><div class="progress-fill" style="width:60%"></div></div></div><span style="font-size:11px;color:var(--text-muted);">60%</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:16px;">🎨</span><div style="flex:1;"><div style="font-size:12px;" data-i18n="lms_course2"></div><div class="progress-bar" style="margin-top:4px;"><div class="progress-fill" style="width:30%"></div></div></div><span style="font-size:11px;color:var(--text-muted);">30%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SURVEYS -->
+      <div id="tab-surveys" class="tab-panel">
+        <div>
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-light);margin-bottom:12px;" data-i18n="mod_surveys"></div>
+          <div class="module-detail-title" data-i18n="survey_title"></div>
+          <p class="module-detail-desc" data-i18n="survey_desc"></p>
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="survey_f1"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="survey_f2"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="survey_f3"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="survey_f4"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="survey_f5"></span></li>
+          </ul>
+          <div class="module-value-pills" id="pills-surveys">
+          <div class="value-pill"><div class="value-pill-icon">🎯</div><div class="value-pill-text"><strong>Catch problems before they escalate</strong></div><span class="value-pill-badge badge-smart">Early warning</span></div>
+          <div class="value-pill"><div class="value-pill-icon">✦</div><div class="value-pill-text"><strong>AI finds the themes you would miss</strong></div><span class="value-pill-badge badge-ai">AI insights</span></div>
+          <div class="value-pill"><div class="value-pill-icon">🔒</div><div class="value-pill-text"><strong>Anonymous means honest feedback</strong></div><span class="value-pill-badge badge-smart">Higher trust</span></div>
+          </div>
+          <button class="ask-price-btn" onclick="openModal('surveys', 'mod_surveys', '💬')">
+            💰 <span data-i18n="ask_price"></span>
+          </button>
+        </div>
+        <div class="module-screen">
+          <div class="module-screen-bar"><div class="ms-dot" style="background:#ff5f57"></div><div class="ms-dot" style="background:#febc2e"></div><div class="ms-dot" style="background:#28c840"></div><span style="font-size:12px;color:var(--text-muted);margin-left:8px;" data-i18n="survey_screen_title"></span></div>
+          <div style="display:flex;gap:8px;margin-bottom:12px;">
+            <div style="flex:1;padding:12px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);text-align:center;"><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#86efac;">+61</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">eNPS</div></div>
+            <div style="flex:1;padding:12px;background:var(--dark3);border-radius:8px;border:1px solid var(--border);text-align:center;"><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;">87%</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;" data-i18n="survey_response"></div></div>
+          </div>
+          <div style="padding:12px;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.2);border-radius:8px;"><div style="font-size:11px;color:var(--purple-light);margin-bottom:8px;">✦ <span data-i18n="survey_ai_themes"></span></div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="padding:3px 10px;border-radius:100px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.15);font-size:11px;color:#86efac;" data-i18n="survey_theme1"></span>
+              <span style="padding:3px 10px;border-radius:100px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.15);font-size:11px;color:#86efac;" data-i18n="survey_theme2"></span>
+              <span style="padding:3px 10px;border-radius:100px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15);font-size:11px;color:#fca5a5;" data-i18n="survey_theme3"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI ASSISTANT -->
+      <div id="tab-ai" class="tab-panel">
+        <div>
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-light);margin-bottom:12px;" data-i18n="mod_ai"></div>
+          <div class="module-detail-title" data-i18n="ai_title"></div>
+          <p class="module-detail-desc" data-i18n="ai_desc"></p>
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="ai_f1"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="ai_f2"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="ai_f3"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="ai_f4"></span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="ai_f5"></span></li>
+          </ul>
+          <div class="module-value-pills" id="pills-ai">
+          <div class="value-pill"><div class="value-pill-icon">⚡</div><div class="value-pill-text"><strong>Answers in seconds, not hours</strong></div><span class="value-pill-badge badge-fast">24/7 available</span></div>
+          <div class="value-pill"><div class="value-pill-icon">📉</div><div class="value-pill-text"><strong>Free your HR team for real work</strong></div><span class="value-pill-badge badge-save">70% less load</span></div>
+          <div class="value-pill"><div class="value-pill-icon">🌍</div><div class="value-pill-text"><strong>Works in any language</strong></div><span class="value-pill-badge badge-smart">Multilingual</span></div>
+          </div>
+          <button class="ask-price-btn" onclick="openModal('ai', 'mod_ai', '🤖')">
+            💰 <span data-i18n="ask_price"></span>
+          </button>
+        </div>
+        <div class="module-screen">
+          <div class="module-screen-bar"><div class="ms-dot" style="background:#ff5f57"></div><div class="ms-dot" style="background:#febc2e"></div><div class="ms-dot" style="background:#28c840"></div><span style="font-size:12px;color:var(--text-muted);margin-left:8px;" data-i18n="ai_screen_title"></span></div>
+          <div class="ai-chat-header"><div class="ai-chat-avatar">✦</div><div><div class="ai-chat-name" data-i18n="ai_bot_name"></div><div class="ai-chat-status">● <span data-i18n="ai_bot_status"></span></div></div></div>
+          <div class="chat-msg user"><div class="chat-avatar-sm" style="background:#4a5568;">A</div><div class="chat-bubble" data-i18n="chat_q1"></div></div>
+          <div class="chat-msg ai"><div class="chat-avatar-sm" style="background:linear-gradient(135deg,#1a6ef5,#8b5cf6);">✦</div><div class="chat-bubble" data-i18n="chat_a1"></div></div>
+          <div class="chat-msg user"><div class="chat-avatar-sm" style="background:#4a5568;">A</div><div class="chat-bubble" data-i18n="chat_q2"></div></div>
+          <div class="chat-msg ai"><div class="chat-avatar-sm" style="background:linear-gradient(135deg,#1a6ef5,#8b5cf6);">✦</div><div class="chat-bubble" data-i18n="chat_a2"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APPROACH ═══ -->
+<section id="approach" style="padding:100px 60px;max-width:1300px;margin:0 auto;">
+  <div class="reveal">
+    <div class="section-eyebrow" data-i18n="approach_eyebrow"></div>
+    <h2 class="section-title" data-i18n="approach_title"></h2>
+    <p class="section-sub" data-i18n="approach_sub"></p>
+  </div>
+  <div class="approach-grid">
+    <div class="approach-card reveal">
+      <div class="approach-num" data-i18n="step1_num"></div>
+      <div class="approach-icon" style="background:rgba(26,110,245,0.12);border:1px solid rgba(26,110,245,0.2);">🏗️</div>
+      <div class="approach-title" data-i18n="step1_title"></div>
+      <p class="approach-desc" data-i18n="step1_desc"></p>
+      <div class="approach-tags"><span class="approach-tag" data-i18n="step1_t1"></span><span class="approach-tag" data-i18n="step1_t2"></span><span class="approach-tag" data-i18n="step1_t3"></span></div>
+    </div>
+    <div class="approach-card reveal">
+      <div class="approach-num" data-i18n="step2_num"></div>
+      <div class="approach-icon" style="background:rgba(139,92,246,0.12);border:1px solid rgba(139,92,246,0.2);">⚙️</div>
+      <div class="approach-title" data-i18n="step2_title"></div>
+      <p class="approach-desc" data-i18n="step2_desc"></p>
+      <div class="approach-tags"><span class="approach-tag" data-i18n="step2_t1"></span><span class="approach-tag" data-i18n="step2_t2"></span><span class="approach-tag" data-i18n="step2_t3"></span></div>
+    </div>
+    <div class="approach-card reveal">
+      <div class="approach-num" data-i18n="step3_num"></div>
+      <div class="approach-icon" style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.18);">🚀</div>
+      <div class="approach-title" data-i18n="step3_title"></div>
+      <p class="approach-desc" data-i18n="step3_desc"></p>
+      <div class="approach-tags"><span class="approach-tag" data-i18n="step3_t1"></span><span class="approach-tag" data-i18n="step3_t2"></span><span class="approach-tag" data-i18n="step3_t3"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METRICS ═══ -->
+<section style="padding:0 60px 100px;max-width:1300px;margin:0 auto;">
+  <div class="metrics-grid reveal">
+    <div class="metric"><div class="metric-num">7</div><div class="metric-label" data-i18n="metric1"></div></div>
+    <div class="metric"><div class="metric-num">70%</div><div class="metric-label" data-i18n="metric2"></div></div>
+    <div class="metric"><div class="metric-num">3×</div><div class="metric-label" data-i18n="metric3"></div></div>
+    <div class="metric"><div class="metric-num">1</div><div class="metric-label" data-i18n="metric4"></div></div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section" id="contact">
+  <div class="reveal">
+    <h2 class="cta-title" data-i18n="cta_title"></h2>
+    <p class="cta-sub" data-i18n="cta_sub"></p>
+    <div class="cta-actions">
+      <a href="https://wa.me/+994702945070" class="btn-cta-white btn-large" data-i18n="cta_demo"></a>
+      <a href="#" class="btn-cta-outline btn-large" data-i18n="cta_consult"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CUSTOMERS ═══ -->
+<section id="customers" class="customers-section">
+  <div class="reveal">
+    <div class="section-eyebrow" data-i18n="customers_eyebrow"></div>
+    <h2 class="section-title" data-i18n="customers_title"></h2>
+    <p class="section-sub" data-i18n="customers_sub"></p>
+  </div>
+  <div class="customers-carousel reveal">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="customer-logo"><img src="./assets/customers/focus.png" alt="Focus" /></div></div>
+        <div class="swiper-slide"><div class="customer-logo"><img src="./assets/customers/ghg.jpeg" alt="GHG" /></div></div>
+        <div class="swiper-slide"><div class="customer-logo"><img src="./assets/customers/hroption.png" alt="HR Option" /></div></div>
+        <div class="swiper-slide"><div class="customer-logo"><img src="./assets/customers/mergen.png" alt="Mergen" /></div></div>
+        <div class="swiper-slide"><div class="customer-logo"><img src="./assets/customers/sundance.jpg" alt="Sundance" /></div></div>
+        <div class="swiper-slide"><div class="customer-logo"><img src="./assets/customers/unec.png" alt="UNEC" /></div></div>
+        <div class="swiper-slide"><div class="customer-logo"><img src="./assets/customers/zirve.png" alt="Zirve" /></div></div>
+        <div class="swiper-slide"><div class="customer-logo"><img src="./assets/customers/bmc.png" alt="BMC" /></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="border-top:1px solid var(--border);padding:48px 60px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;">
+  <div>
+    <a href="#" class="logo"><div class="logo-icon" style="width:28px;height:28px;font-size:13px;background:linear-gradient(135deg,#1a6ef5,#7c4ddf);font-family:'Syne',sans-serif;font-weight:800;color:#fff;">H</div>Hirpo</a>
+    <div style="font-size:13px;color:var(--text-muted);margin-top:8px;" data-i18n="footer_copy"></div>
+  </div>
+  <ul style="display:flex;gap:32px;list-style:none;justify-content:flex-end;">
+    <li><a href="#" style="color:var(--text-muted);text-decoration:none;font-size:13px;" data-i18n="footer_platform"></a></li>
+    <li><a href="#" style="color:var(--text-muted);text-decoration:none;font-size:13px;" data-i18n="footer_pricing"></a></li>
+    <li><a href="#" style="color:var(--text-muted);text-decoration:none;font-size:13px;" data-i18n="footer_contact"></a></li>
+    <li><a href="#" style="color:var(--text-muted);text-decoration:none;font-size:13px;" data-i18n="footer_privacy"></a></li>
+  </ul>
+</footer>
+<script src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script>
 			var swiper = new Swiper(".swiper", {
 				grabCursor: true,
@@ -343,5 +669,5 @@
 				},
 			});
 		</script>
-	</body>
+</body>
 </html>
