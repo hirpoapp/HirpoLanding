@@ -340,6 +340,7 @@ const modalLang = {
     errorCompany: 'Please enter your company name.',
     errorEmail: 'Please enter a valid corporate email.',
     sending: 'Sending...',
+    sendFailed: 'Request could not be sent. Please try again.',
   },
   az: {
     title: 'Qiymət Sorğusu',
@@ -355,6 +356,7 @@ const modalLang = {
     errorCompany: 'Şirkət adını daxil edin.',
     errorEmail: 'Düzgün korporativ email daxil edin.',
     sending: 'Göndərilir...',
+    sendFailed: 'Sorğu göndərilə bilmədi. Zəhmət olmasa yenidən cəhd edin.',
   }
 };
 
@@ -425,26 +427,37 @@ async function submitPriceRequest() {
   if (!valid) return;
 
   const btn = document.getElementById('modalSubmitBtn');
+  const submitText = document.getElementById('submitBtnText');
   btn.disabled = true;
-  document.getElementById('submitBtnText').textContent = t.sending;
+  submitText.textContent = t.sending;
 
   try {
-    const serviceID = "service_4okz8hm";
-    const templateID = "template_falwu3m";
-
-    await emailjs.send(serviceID, templateID, {
-      name: company,
-      email: email,
-      message: `Module: ${currentModule}\nCompany: ${company}\nEmail: ${email}`,
+    const response = await fetch('http://admin.hirpo.net/main/send-price-list/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        company_name: company,
+        contact_email: email,
+        module: currentModule,
+      }),
     });
-  } catch (err) {
-    console.error('EmailJS send failed:', err);
-  }
 
-  // Show success
-  document.getElementById('modalForm').style.display = 'none';
-  document.getElementById('modalSuccess').style.display = 'block';
-  btn.disabled = false;
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    // Show success only after a successful backend response.
+    document.getElementById('modalForm').style.display = 'none';
+    document.getElementById('modalSuccess').style.display = 'block';
+  } catch (err) {
+    console.error('Price request send failed:', err);
+    alert(t.sendFailed);
+  } finally {
+    btn.disabled = false;
+    submitText.textContent = t.submitBtn;
+  }
 }
 
 // Close modal on Escape key
