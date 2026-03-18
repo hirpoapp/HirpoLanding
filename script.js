@@ -432,7 +432,7 @@ async function submitPriceRequest() {
   submitText.textContent = t.sending;
 
   try {
-    const response = await fetch('http://admin.hirpo.net/main/send-price-list/', {
+    const response = await fetch('https://admin.hirpo.net/main/send-price-list/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
