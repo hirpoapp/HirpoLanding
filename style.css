@@ -2147,6 +2147,31 @@ footer {
         height: 64px;
         padding: 12px 16px;
     }
+
+    footer {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        padding: 36px 20px !important;
+        gap: 24px !important;
+    }
+
+    footer ul {
+        justify-content: flex-start !important;
+        flex-wrap: wrap !important;
+        gap: 16px !important;
+    }
+
+    .value-item {
+        white-space: normal;
+    }
+
+    .os-modules {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .hero-visual {
+        overflow-x: hidden;
+    }
 }
 
 @media (max-width: 400px) {
@@ -2159,7 +2184,7 @@ footer {
     }
 
     .os-modules {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 
